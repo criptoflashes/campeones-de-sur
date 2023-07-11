@@ -1,5 +1,5 @@
 import Users from "@/components/Users";
-
+import Hero from "@/components/Hero";
 
 //REact Server Component
 //esta función la voy a ejecutar  desde el servidor, el método fetch se usa en el front como el back
@@ -17,9 +17,10 @@ async function IndexPage() {
 
   return (
     <div>
+     <Hero/>
       <h1>Index page</h1>
-
-<Users users={users}/>
+      <button className="btn btn-primary">Error</button>
+      <Users users={users} />
     </div>
   );
 }
