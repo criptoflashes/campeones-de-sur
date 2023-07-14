@@ -1,18 +1,50 @@
 import React from 'react'
+import Image from 'next/image'
 
 function Hero() {
-  return (
-    <div className="hero min-h-screen" style={{backgroundImage: 'url(https://daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg)'}}>
-    <div className="hero-overlay bg-opacity-60"></div>
-    <div className="hero-content text-center text-neutral-content">
-      <div className="max-w-md">
-        <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-        <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-        <button className="btn btn-primary">Get Started</button>
-      </div>
-    </div>
-  </div>
-  )
+    return (
+
+        <div>
+            <div className="carousel carousel-end rounded-box h-60 mt-10">
+
+                <div className="carousel-item">
+                    <Image src="https://images.pexels.com/photos/4187778/pexels-photo-4187778.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Drink"
+                        height="100"
+                        width="200" />
+                </div>
+                <div className="carousel-item">
+                    <Image src="https://images.pexels.com/photos/4639785/pexels-photo-4639785.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Drink" height="100"
+                        width="300" />
+                </div>
+
+                <div className="carousel-item">
+                    <Image src="https://images.pexels.com/photos/4109938/pexels-photo-4109938.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Drink" height="50"
+                        width="200" />
+                </div>
+
+                <div className="carousel-item">
+                    <Image src="https://images.pexels.com/photos/8250416/pexels-photo-8250416.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Drink"
+                        height="100"
+                        width="300" />
+                </div>
+                {/*             <div className="carousel-item">
+                <Image src="https://images.pexels.com/photos/6287519/pexels-photo-6287519.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Drink" height="100"
+                    width="200" />
+            </div> */}
+                <div className="carousel-item">
+                    <Image src="https://images.pexels.com/photos/5755518/pexels-photo-5755518.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Drink" height="100"
+                        width="200" />
+                </div>
+                <div className="carousel-item">
+                    <Image src="https://images.pexels.com/photos/3756498/pexels-photo-3756498.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        height="100"
+                        width="300"
+                        alt="GFG logo served from external URL" />
+                </div>
+
+            </div>
+        </div>
+    )
 }
 
 export default Hero

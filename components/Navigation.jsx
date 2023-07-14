@@ -1,31 +1,16 @@
 
 import Link from 'next/link'
+import Image from 'next/image'
+import cheeseHome from '@/public/cheese-svgrepo-com.svg'
+
 
 
 function Navigation() {
     return (
-        <div>
-            <ul>
-                <li>
-                    <Link href="/">home</Link>
-                </li>
-            </ul>
-            <ul>
-                <li>
-                    <Link href="/about">about</Link>
-                </li>
-            </ul>
-            <ul>
-                <li>
-                    <Link href="/productos">services</Link>
-                </li>
-            </ul>
-
-
-
-
-            <div className="navbar bg-base-100">
-                <div className="navbar-start">
+        <div /* className='relative' */>
+           
+            <div className="navbar  bg-blue-300">
+                <div className="navbar-start  ">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -49,9 +34,17 @@ function Navigation() {
                             </li>
                         </ul>
                     </div>
-                    <a className="btn  normal-case text-xl btn-accent">Campeones del Sur</a>
+                    <div className='hover:scale-75 translate-x-20 skew-y-3 '>
+                    <Link href="/">
+                    <Image src= {cheeseHome} alt="campeones del sur"  width="100" height="100" className='ml-20' />
+                    </Link>
+                    </div>
                 </div>
-                <div className="navbar-center hidden lg:flex">
+
+          
+                <div className="navbar-center hidden lg:flex  ">
+
+               
                     <ul className="menu menu-horizontal px-1">
                         <li>
                             <Link href="/">Home</Link>
@@ -70,11 +63,9 @@ function Navigation() {
                         </li>
                     </ul>
                 </div>
-                <div className="navbar-end">
-                    <a className="btn">Button</a>
-                </div>
-            </div>
 
+            </div>
+            
         </div>
     )
 }

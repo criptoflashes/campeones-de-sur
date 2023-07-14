@@ -1,5 +1,8 @@
 import Users from "@/components/Users";
 import Hero from "@/components/Hero";
+import MainContentHome from "@/components/MainContentHome";
+import Image from "next/image";
+
 
 //REact Server Component
 //esta función la voy a ejecutar  desde el servidor, el método fetch se usa en el front como el back
@@ -16,11 +19,12 @@ async function IndexPage() {
   const users = await fetchUsers();
 
   return (
-    <div>
-     <Hero/>
+    <div className="flex flex-col place-content-center px-10 " >
+
+      <Hero />
       <h1>Index page</h1>
-      <button className="btn btn-primary">Error</button>
-      <Users users={users} />
+      <MainContentHome />
+      {/* <Users users={users} /> */}
     </div>
   );
 }
