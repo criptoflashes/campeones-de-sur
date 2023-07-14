@@ -1,12 +1,12 @@
 
 import Image from 'next/image'
-import logo from '@/public/campeonsDelSur.svg'
+import logo from '@/public/campeonsDelSur.png'
 function Announcement() {
     return (
         <div /* className='relative' */>
             <div className="bg-primary px-4 py-3 text-white">
             <div className="flex flex-row place-content-center">
-      <Image src={logo} width="200" height="200" objectFit="center"  />
+      <Image src={logo} width="200" height="200"  />
       </div>
                 <p className="text-center text-sm font-medium">
                 Pronto estaremos llegando como campeones a tu mesa!
