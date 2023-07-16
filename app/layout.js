@@ -6,8 +6,6 @@ import Navigation from '@/components/Navigation'
 import Footer from "@/components/Footer";
 
 
-import logo from '@/public/campeonsDelSur.svg'
-
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
