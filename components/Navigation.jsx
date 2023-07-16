@@ -28,6 +28,7 @@ function Navigation() {
                                 <ul className="p-2">
                                     <li><Link href="/productos/quesos">Quesos</Link></li>
                                     <li><Link href="/productos/chorizos">Chorizos</Link></li>
+                                    <li><Link href="/productos/yerba">Yerba</Link></li>
                                 </ul>
                             </li>
                             <li>
@@ -58,6 +59,7 @@ function Navigation() {
                             <ul className="p-2">
                                 <li><Link href="/productos/quesos">Quesos</Link></li>
                                 <li><Link href="/productos/chorizos">Chorizos</Link></li>
+                                <li><Link href="/productos/yerba">Yerba</Link></li>
                             </ul>
                         </details>
                     </li>

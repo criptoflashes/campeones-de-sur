@@ -1,6 +1,6 @@
 import React from 'react'
 
-function quesos() {
+function Quesos() {
   return (
     <div>
         <h1>quesito</h1>
@@ -9,4 +9,4 @@ function quesos() {
   )
 }
 
-export default quesos
+export default Quesos
