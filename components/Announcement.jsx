@@ -9,7 +9,7 @@ function Announcement() {
             <div className="bg-primary px-4 py-3 text-white">
                 <motion.div animate={{
                     scale: [1],
-                    rotate: [0, 45, -30, 0],
+                    rotate: [0, 45, -30, 5, -2, 0],
                     borderRadius: ["0%", "0%", "50%", "50%", "0%"]
                 }}
                     transition={{
