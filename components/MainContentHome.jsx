@@ -17,7 +17,7 @@ function MainContentHome() {
     return (
         <div className="py-20 "> <div className="divider"></div>
 
-            <div ref = {productsDiv} class="grid grid-cols-1 gap-4 lg:grid-cols-4 lg:gap-8" >
+            <div ref = {productsDiv} className="grid grid-cols-1 gap-4 lg:grid-cols-4 lg:gap-8" >
 
 
                 <motion.div style={{ opacity: smoothOpacity   , scale: smoothOpacity  }}/* style={{ scaleX: scrollYProgress }} */  /* animate={{ opacity:scrollYProgress, scale: 1 }} */ /* transition={{ ease: "easeInOut", duration: 0.8 }}  */class="h-32 rounded-lg bg-gray-400"></motion.div>
