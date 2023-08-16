@@ -54,7 +54,10 @@ function FormPage() {
 
   return (
     <div className="h-screen flex justify-center items-center">
+
       <form onSubmit={handleSubmit} >
+
+      <h1 className="font-bold text-3xl">Crea un producto</h1>
         <input type="text" name="title" placeholder="Título" className="bg-gray-300 border-2 w-full p-4 rounded-lg my-4" onChange={handleChange} />
 
 

@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import cheeseHome from '@/public/cheese-svgrepo-com.svg'
+import cheeseHome from '../public/cheese-svgrepo-com.svg'
 import { motion } from "framer-motion"
 
 

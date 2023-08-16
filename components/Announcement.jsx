@@ -2,7 +2,7 @@
 "use client"
 import { motion } from "framer-motion"
 import Image from 'next/image'
-import logo from '@/public/campeonsDelSur.png'
+import logo from '../public/campeonsDelSur.png'
 function Announcement() {
     return (
         <div /* className='relative' */>
