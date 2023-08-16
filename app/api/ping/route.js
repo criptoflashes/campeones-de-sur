@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import  {connectDb } from '@/utils/mongooseConn'
+import  {connectDb } from '../../../utils/mongooseConn'
 
  export function GET(){
     connectDb()
