@@ -1,5 +1,9 @@
-import {connect, connection}from 'mongoose'
+require('dotenv').config();
 
+import {connect, connection}from 'mongoose'
+const {
+    MONGODB_URI
+  } = process.env;
 const conn = {
     isConnected: false
 }
@@ -9,7 +13,8 @@ export async function connectDb(){
 if(conn.isConnected) return
 
 
-   const db = await connect('mongodb://localhost/campeonesdb')
+   /* const db = await connect('mongodb://localhost/campeonesdb') */
+   const db = await connect('MONGODB_URI')
 console.log(db.connection.db.databaseName)
 conn.isConnected = db.connections[0].readyState
 }
