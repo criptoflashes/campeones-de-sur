@@ -26,10 +26,10 @@ function FormPage() {
       })
       const data = await res.json()
 
-      if(res.status === 200){
-      router.push('/')
-    }
-    console.log(data)
+      if (res.status === 200) {
+        router.push('/')
+      }
+      console.log(data)
     } catch (error) {
       console.log(error.message)
 
@@ -57,7 +57,7 @@ function FormPage() {
 
       <form onSubmit={handleSubmit} >
 
-      <h1 className="font-bold text-3xl">Crea un producto</h1>
+        <h1 className="font-bold text-3xl">Crea un producto</h1>
         <input type="text" name="title" placeholder="Título" className="bg-gray-300 border-2 w-full p-4 rounded-lg my-4" onChange={handleChange} />
 
 
@@ -75,6 +75,7 @@ function FormPage() {
             <option value="Otros">Otros</option>
           </optgroup>
         </select>
+
 
         <textarea name="description" placeholder="Descripción" className="bg-gray-300 border-2 w-full p-4 rounded-lg my-4" rows={3} onChange={handleChange}> </textarea>
         <button className="bg-green-600 hover:bg-green-700 text-white font-bold px-4  py-2 rounded-lg">Guardar</button>

@@ -19,7 +19,7 @@ function Announcement() {
                         repeat: 0,
                         repeatDelay: 1
                     }} className="flex flex-row place-content-center w-200 h-200">
-                    <Image src={logo} width="200" height="200" />
+                    <Image src={logo} width="200" height="auto" alt=""/>
                 </motion.div>
                 <p className="text-center text-sm font-medium">
                     Pronto estaremos llegando como campeones a tu mesa!
