@@ -20,7 +20,7 @@ async function loadProducts() {
 async function DashboardCardContainer() {
   const showProducts = await loadProducts()
   return (
-    <div>
+    <div className= "grid md:grid-cols-3 gap-2 ">
       {/* {JSON.stringify(showProducts)} */}
         {showProducts.map(product => (
         <CardAdminProducts product={product} key={product._id}></CardAdminProducts>
