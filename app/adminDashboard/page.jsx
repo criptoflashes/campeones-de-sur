@@ -38,7 +38,7 @@ function AdminDashboard() {
         router.push('/adminProducts')
         router.refresh()
       }
-      console.log(myProducts)
+      console.log(data)
     } catch (error) {
       console.log(error.message)
     }
@@ -59,7 +59,7 @@ function AdminDashboard() {
       }
     }
   }
-  
+
     //Submit
     const handleSubmit = (e) => {
       e.preventDefault()
