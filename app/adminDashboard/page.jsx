@@ -1,10 +1,18 @@
 "use client"
+
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 
 
 
-function FormPage() {
+
+
+
+ function AdminDashboard() {
+
+  const router = useRouter()
+
+
   let [newProduct, setNewProduct] = useState({
     title: "",
     category: "",
@@ -12,7 +20,7 @@ function FormPage() {
   })
 
 
-  const router = useRouter()
+
 
   //POST product
   const createProduct = async () => {
@@ -26,15 +34,16 @@ function FormPage() {
       })
       const data = await res.json()
 
-      if (res.status === 200) {
-        router.push('/')
-      }
-      console.log(data)
+         if (res.status === 200) {
+           router.push('/adminProducts')
+         }
+      console.log(myProducts)
     } catch (error) {
       console.log(error.message)
-
     }
   }
+
+
 
 
   //Submit
@@ -77,12 +86,13 @@ function FormPage() {
         </select>
 
 
-        <textarea name="description" placeholder="Descripción" className="bg-gray-300 border-2 w-full p-4 rounded-lg my-4" rows={3} onChange={handleChange}> </textarea>
+        <textarea name="description" placeholder="Descripción" className="bg-gray-300 border-2 w-full p-4 rounded-lg my-4" rows={3} onChange={handleChange} > </textarea>
         <button className="bg-green-600 hover:bg-green-700 text-white font-bold px-4  py-2 rounded-lg">Guardar</button>
 
       </form>
+      
     </div>
   )
 }
 
-export default FormPage
+export default AdminDashboard

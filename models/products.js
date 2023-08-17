@@ -1,6 +1,7 @@
 import { Schema, model, models } from "mongoose";
 
-const productSquema = new Schema(
+
+const productSchema = new Schema(
   {
     title: {
       type: String,
@@ -23,4 +24,5 @@ const productSquema = new Schema(
   { timestamps: true }
 );
 // if Product model doesn't exist, create model
-export default models.Product || model ("Product", productSquema)
+
+export default models.Product || model('Product', productSchema);

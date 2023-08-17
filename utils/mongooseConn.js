@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-import {connect, connection}from 'mongoose'
+import {connection, connect }from 'mongoose'
 
 const conn = {
     isConnected: false
@@ -16,11 +16,9 @@ conn.isConnected = db.connections[0].readyState
 }
 
 
-
 connection.on('connected', () => {
     console.log("Mongoose is connected")
 })
-
 connection.on('error', (err)=>{
     console.log('Mongoose connection error', err)
 })
