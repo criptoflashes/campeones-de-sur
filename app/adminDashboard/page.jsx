@@ -7,8 +7,9 @@ import { useRouter, useParams } from "next/navigation"
 
 function AdminDashboard() {
 
-  const router = useRouter()
+  
   const params = useParams()
+  const router = useRouter()
 
   let [newProduct, setNewProduct] = useState({
     title: "",
