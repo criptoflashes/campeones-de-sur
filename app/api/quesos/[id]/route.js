@@ -5,7 +5,7 @@ import { connectDb } from "../../../../utils/mongooseConn";
 
 export async function GET(request, { params }) {
   console.log(params);
-  connectDb();
+  await connectDb();
   try {
     const productFound = await Product.findById(params.id);
     if (!productFound) {
@@ -21,7 +21,7 @@ export async function GET(request, { params }) {
 }
 
 export async function DELETE(request, { params }) {
-  connectDb();
+ await connectDb();
   try {
     const productDeleted = await Product.findByIdAndDelete(params.id);
 
@@ -42,7 +42,7 @@ export async function DELETE(request, { params }) {
 }
 
 export async function PUT(request, { params }) {
-  connectDb();
+ await connectDb();
   try {
     const data = await request.json();
     // new: true returns actualized data
