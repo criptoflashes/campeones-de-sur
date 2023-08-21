@@ -20,6 +20,8 @@ export async function GET(request, { params }) {
   }
 }
 
+
+
 export async function DELETE(request, { params }) {
  await connectDb();
   try {
@@ -42,11 +44,12 @@ export async function DELETE(request, { params }) {
 }
 
 export async function PUT(request, { params }) {
+  const body = await request.json();
  await connectDb();
   try {
-    const data = await request.json();
+  
     // new: true returns actualized data
-    const productUpdated = await Product.findByIdAndUpdate(params.id, data, {
+    const productUpdated = await Product.findByIdAndUpdate(params.id, body, {
       new: true,
     });
 
@@ -54,6 +57,8 @@ export async function PUT(request, { params }) {
       productUpdated,
     });
   } catch (error) {
-    return NextResponse.json(error.message);
+    return NextResponse.json(error.message, {
+      status: 400,
+    });
   }
 }

@@ -1,6 +1,7 @@
+import Product from "../../../models/products";
 import { NextResponse } from "next/server";
 import { connectDb } from "../../../utils/mongooseConn";
-import Product from "../../../models/products";
+
 
 export async function GET() {
    await connectDb();
@@ -19,11 +20,11 @@ export async function GET() {
 
 
 export async function POST(request) {
-  connectDb();
+  await connectDb();
   try {
     
-    const data = await request.json();
-    const newProduct = new Product(data);
+    const body = await request.json();
+    const newProduct = new Product(body);
     const savedProduct = await newProduct.save();
     console.log(savedProduct);
 

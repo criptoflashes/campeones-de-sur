@@ -8,8 +8,7 @@ import { useRouter, useParams } from "next/navigation"
 function AdminDashboard() {
 
   
-  const params = useParams()
-  const router = useRouter()
+
 
   let [newProduct, setNewProduct] = useState({
     title: "",
@@ -17,7 +16,8 @@ function AdminDashboard() {
     description: ""
   })
 
-
+  const params = useParams()
+  const router = useRouter()
 
 
   //POST product
@@ -25,17 +25,18 @@ function AdminDashboard() {
     try {
       const res = await fetch('api/quesos/', {
         method: "POST",
-        body: JSON.stringify(newProduct),
         headers: {
           "Content-Type": "application/json"
-        }
+        },
+        body: JSON.stringify(newProduct),
+       
       })
       const data = await res.json()
 
-      if (res.status === 200) {
+  
         router.push('/adminProducts')
         router.refresh()
-      }
+      
       console.log(data)
     } catch (error) {
       console.log(error.message)
@@ -76,10 +77,12 @@ function AdminDashboard() {
   }
 
 
-/*   useEffect(() => {
-    console.log(params)
-  }, [])
- */
+ /*  useEffect(() => {
+    if (params.id) {
+      getTask();
+    }
+  }, []) */
+
 
   return (
     <div className="h-screen flex justify-center items-center">
