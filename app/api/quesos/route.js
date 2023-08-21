@@ -5,9 +5,16 @@ import Product from "../../../models/products";
 export async function GET(request, { params }) {
   console.log(params);
   connectDb();
+  try{
+    const product = await Product.find();
+    return NextResponse.json(product)
+  }catch(error){
+    return NextResponse.json(error.message, {
+      status: 400,
+    });
+  }
 
-  const product = await Product.find();
-  return NextResponse.json(product)
+ 
 }
 
 
