@@ -19,7 +19,10 @@ function AdminDashboard() {
 
   const params = useParams()
   const router = useRouter()
-
+  
+  const refreshPage = () => {
+    router.refresh();
+  };
 
   //POST product
   const createProduct = async () => {
@@ -36,7 +39,7 @@ function AdminDashboard() {
 
   
         router.push('/adminProducts')
-        router.refresh()
+        refreshPage()
 
       
       console.log(data)
@@ -55,12 +58,12 @@ function AdminDashboard() {
           method: "DELETE",
         })
         router.push('/adminProducts')
-        router.refresh()
+        refreshPage()
 
       } catch (error) {
         console.log(error)
         router.push('/adminProducts')
-        router.refresh()
+        refreshPage()
       }
     }
   }
