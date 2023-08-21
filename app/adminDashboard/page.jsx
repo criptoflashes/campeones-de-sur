@@ -1,7 +1,8 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { useRouter, useParams } from "next/navigation"
+import { useRouter , useParams } from "next/navigation"
+
 
 
 
@@ -35,8 +36,8 @@ function AdminDashboard() {
 
   
         router.push('/adminProducts')
-        router.reload()
-        
+        router.refresh()
+
       
       console.log(data)
     } catch (error) {
@@ -54,12 +55,12 @@ function AdminDashboard() {
           method: "DELETE",
         })
         router.push('/adminProducts')
-        router.reload()
+        router.refresh()
 
       } catch (error) {
         console.log(error)
         router.push('/adminProducts')
-        router.reload()
+        router.refresh()
       }
     }
   }
@@ -78,11 +79,9 @@ function AdminDashboard() {
   }
 
 
- /*  useEffect(() => {
-    if (params.id) {
-      getTask();
-    }
-  }, []) */
+  useEffect(() => {
+  console.log(params.id, "hey")
+  }, [])
 
 
   return (
