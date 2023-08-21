@@ -6,7 +6,7 @@ import CardAdminProducts from "../../components/CardAdminProducts"
 
 
 async function loadProducts() {
-  connectDb()
+  await connectDb()
   const productResponse = await Product.find()
   return productResponse
 }
