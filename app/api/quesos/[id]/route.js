@@ -20,6 +20,7 @@ export async function GET(request, { params }) {
 }
 
 export async function DELETE(request, { params }) {
+  connectDb();
   try {
     const productDeleted = await Product.findByIdAndDelete(params.id);
 
