@@ -35,7 +35,8 @@ function AdminDashboard() {
 
   
         router.push('/adminProducts')
-        router.refresh()
+        router.reload()
+        
       
       console.log(data)
     } catch (error) {
@@ -53,7 +54,7 @@ function AdminDashboard() {
           method: "DELETE",
         })
         router.push('/adminProducts')
-        router.refresh()
+        router.reload()
 
       } catch (error) {
         console.log(error)
