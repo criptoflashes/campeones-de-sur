@@ -42,8 +42,10 @@ function AdminDashboard() {
     }
   }
 
-  const handleDelete = async () => {
 
+  
+
+  const handleDelete = async () => {
     if (window.confirm("¿Estás seguro de borrar este producto?")) {
       try {
         const res = await fetch(`/api/quesos/${params.id}`, {
