@@ -58,7 +58,7 @@ function AdminDashboard() {
       } catch (error) {
         console.log(error)
         router.push('/adminProducts')
-        router.refresh()
+        router.reload()
       }
     }
   }
