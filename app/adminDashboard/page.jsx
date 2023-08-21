@@ -71,10 +71,10 @@ function AdminDashboard() {
   }
 
 
-  useEffect(() => {
+/*   useEffect(() => {
     console.log(params)
   }, [])
-
+ */
 
   return (
     <div className="h-screen flex justify-center items-center">
