@@ -2,9 +2,8 @@ import { NextResponse } from "next/server";
 import { connectDb } from "../../../utils/mongooseConn";
 import Product from "../../../models/products";
 
-export async function GET(request, { params }) {
-  console.log(params);
-  connectDb();
+export async function GET() {
+   await connectDb();
   try{
     const product = await Product.find();
     return NextResponse.json(product)

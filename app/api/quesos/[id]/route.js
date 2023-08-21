@@ -1,6 +1,7 @@
+import Product from "../../../../models/products";
 import { NextResponse } from "next/server";
 import { connectDb } from "../../../../utils/mongooseConn";
-import Product from "../../../../models/products";
+
 
 export async function GET(request, { params }) {
   console.log(params);
@@ -41,6 +42,7 @@ export async function DELETE(request, { params }) {
 }
 
 export async function PUT(request, { params }) {
+  connectDb();
   try {
     const data = await request.json();
     // new: true returns actualized data

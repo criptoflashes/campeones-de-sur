@@ -43,7 +43,7 @@ function AdminDashboard() {
   }
 
 
-  
+
 
   const handleDelete = async () => {
     if (window.confirm("¿Estás seguro de borrar este producto?")) {
@@ -56,6 +56,8 @@ function AdminDashboard() {
 
       } catch (error) {
         console.log(error)
+        router.push('/adminProducts')
+        router.refresh()
       }
     }
   }
