@@ -4,11 +4,12 @@ import { useState, useEffect } from "react"
 import { useRouter , useParams } from "next/navigation"
 
 
-
+export const dynamic = 'force-dynamic';
 
 function AdminDashboard() {
 
   
+
 
 
   let [newProduct, setNewProduct] = useState({
