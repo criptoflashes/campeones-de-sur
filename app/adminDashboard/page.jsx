@@ -37,12 +37,13 @@ function AdminDashboard() {
       })
       const data = await res.json()
 
-  
-        router.push('/adminProducts')
         router.refresh()
+        router.push('/adminProducts')
+        
+        /* console.log(data) */
         return NextResponse.json({ data })
       
-      console.log(data)
+      
     } catch (error) {
       console.log(error.message)
     }
@@ -57,13 +58,15 @@ function AdminDashboard() {
         const res = await fetch(`/api/quesos/${params.id}`, {
           method: "DELETE",
         })
-        router.push('/adminProducts')
         router.refresh()
+        router.push('/adminProducts')
+     
 
       } catch (error) {
         console.log(error)
-        router.push('/adminProducts')
         router.refresh()
+        router.push('/adminProducts')
+        
       }
     }
   }
@@ -102,12 +105,12 @@ function AdminDashboard() {
 
 
         </header>
-        <input type="text" name="title" placeholder="Título" className="bg-gray-300 border-2 w-full p-4 rounded-lg my-4" onChange={handleChange} />
+        <textarea type="text" name="title" placeholder="Título" className="bg-gray-300 border-2 w-full p-4 rounded-lg my-4" onChange={handleChange}></textarea>
 
 
         <select name="category" className="bg-gray-300 border-2 w-1/2 p-4 rounded-lg my-4" onChange={handleChange}>
           <optgroup>
-            <option disabled selected>Selecciona una categoría</option>
+            <option disabled>Selecciona una categoría</option>
 
 
             <option value="Queso">Queso</option>
@@ -121,7 +124,7 @@ function AdminDashboard() {
         </select>
 
 
-        <textarea name="description" placeholder="Descripción" className="bg-gray-300 border-2 w-full p-4 rounded-lg my-4" rows={3} onChange={handleChange} > </textarea>
+        <input  type="text" name="description"   placeholder="Descripción" className="bg-gray-300 border-2 w-full p-4 rounded-lg my-4" rows={3} onChange={handleChange}/> 
         <button type="submit" className="bg-green-600 hover:bg-green-700 text-white font-bold px-4  py-2 rounded-lg">Guardar</button>
 
       </form>
@@ -129,5 +132,7 @@ function AdminDashboard() {
     </div>
   )
 }
+
+
 
 export default AdminDashboard
