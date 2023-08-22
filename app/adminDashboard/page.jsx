@@ -85,9 +85,9 @@ function AdminDashboard() {
   }
 
 
-  useEffect(() => {
+/*   useEffect(() => {
   console.log(params.id, "hey")
-  }, [])
+  }, []) */
 
 
   return (
