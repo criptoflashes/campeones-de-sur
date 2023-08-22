@@ -41,7 +41,7 @@ function AdminDashboard() {
         router.push('/adminProducts')
         
         /* console.log(data) */
-        return NextResponse.json({ data })
+       /*  return NextResponse.json({ data }) */
       
       
     } catch (error) {
@@ -61,7 +61,7 @@ function AdminDashboard() {
         router.refresh()
         router.push('/adminProducts')
      
-
+       console.log(res)
       } catch (error) {
         console.log(error)
         router.refresh()
