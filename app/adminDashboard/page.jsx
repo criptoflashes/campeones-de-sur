@@ -20,9 +20,9 @@ function AdminDashboard() {
   const params = useParams()
   const router = useRouter()
   
-  const refreshPage = () => {
+/*   const refreshPage = () => {
     router.refresh();
-  };
+  }; */
 
   //POST product
   const createProduct = async () => {
@@ -39,8 +39,8 @@ function AdminDashboard() {
 
   
         router.push('/adminProducts')
-        refreshPage()
-
+        /* router.refresh() */
+        return NextResponse.json({ data })
       
       console.log(data)
     } catch (error) {
@@ -58,12 +58,12 @@ function AdminDashboard() {
           method: "DELETE",
         })
         router.push('/adminProducts')
-        refreshPage()
+       /*  router.refresh() */
 
       } catch (error) {
         console.log(error)
         router.push('/adminProducts')
-        refreshPage()
+        /* router.refresh() */
       }
     }
   }
