@@ -6,7 +6,7 @@ import CardAdminProducts from "../../components/CardAdminProducts"
 
 
 async function loadProducts() {
- /*  await connectDb()*/
+  await connectDb()
   const productResponse = await Product.find()
   return productResponse 
  /*  const res = await fetch('http://localhost:3000/api/quesos')
