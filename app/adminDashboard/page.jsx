@@ -39,7 +39,7 @@ function AdminDashboard() {
 
   
         router.push('/adminProducts')
-        /* router.refresh() */
+        router.refresh()
         return NextResponse.json({ data })
       
       console.log(data)
@@ -58,12 +58,12 @@ function AdminDashboard() {
           method: "DELETE",
         })
         router.push('/adminProducts')
-       /*  router.refresh() */
+        router.refresh()
 
       } catch (error) {
         console.log(error)
         router.push('/adminProducts')
-        /* router.refresh() */
+        router.refresh()
       }
     }
   }
