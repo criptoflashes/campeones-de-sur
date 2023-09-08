@@ -3,7 +3,6 @@ import Link from 'next/link';
 function CardAdminProducts({ product }) {
 
   return (
-    
     <Link href={`/adminProducts/${product._id}`}>
       <div className="bg-gray-400 text-white rounded-md hover:cursor-pointer hover:bg-gray-700 flex flex-wrap justify-center ">
        
