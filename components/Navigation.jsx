@@ -7,6 +7,7 @@ import { motion } from "framer-motion"
 
 
 function Navigation() {
+    
     return (
         <div /* className='relative' */>
 
