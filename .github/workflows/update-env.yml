@@ -1,0 +1,17 @@
+name: Update .env File
+
+on:
+  push:
+    branches:
+      - main  # Change to your main branch name
+
+jobs:
+  update-env:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Update .env File
+        run: echo "${{ secrets.ENV_FILE }}" > .env
