@@ -4,9 +4,6 @@ import { motion, useScroll, useSpring } from "framer-motion"
 
 function MainContentHome() {
 
-  
-       
-
         const productsDiv = useRef(null)
         const { scrollYProgress } = useScroll({target: productsDiv, 
             offset: ["start end",  "end end"]})

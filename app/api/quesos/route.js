@@ -36,10 +36,23 @@ export async function POST(request) {
     const title = data.get("title");
     const category = data.get("category");
     const description = data.get("description");
-   
+
+   //save image to local
     const buffer = await processImage(image)
 
-    const newProduct = new Product(title, category, description);
+   
+   //upload photos to cloudinary
+const res =  await cloudinary.uploader.upload(buffer)
+console.log("cloudy", res)
+
+const imageUrl = res.secure_url
+
+console.log(title, category, description, imageUrl, "infoo")
+
+ 
+    
+
+    const newProduct = new Product({title, category, description, imageUrl  });
     const savedProduct = await newProduct.save();
      console.log("este", savedProduct); 
 

@@ -20,9 +20,9 @@ const productSchema = new Schema(
       required: [true, "La descripción es requerida"],
       trim: true,
     },
-    image: {
-      public_id: String,
-      secure_url: String,
+    imageUrl: {
+     type: String,
+     required:false
     }
   },
   { timestamps: true }
