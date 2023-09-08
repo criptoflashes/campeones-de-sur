@@ -3,7 +3,6 @@ import Image from 'next/image'
 
 function Hero() {
     return (
-
         <div>
             <div className="carousel carousel-end rounded-box h-60 mt-10">
 
