@@ -45,7 +45,7 @@ export async function POST(request) {
 const res =  await cloudinary.uploader.upload(buffer)
 /* console.log("cloudy", res) */
 
-const imageUrl = res.secure_url
+const imageUrl =   res.secure_url
 
 /* console.log(title, category, description, imageUrl, "infoo") */
 
