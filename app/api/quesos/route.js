@@ -66,7 +66,7 @@ console.log(title, category, description, imageUrl, "infoo")
     });
   } catch (error) {
     return NextResponse.json(error.message, {
-      status: 600,
+      status: 402,
     });
   }
 }
