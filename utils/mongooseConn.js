@@ -14,8 +14,8 @@ if(conn.isConnected) return
 console.log(db.connection.db.databaseName)
 conn.isConnected = db.connections[0].readyState
 }
-console.log("uri", source)
-
+/* console.log("uri", source)
+ */
 connection.on('connected', () => {
     console.log("Mongoose is connected")
 })
