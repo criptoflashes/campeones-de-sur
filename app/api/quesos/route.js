@@ -2,7 +2,6 @@ require("dotenv").config();
 import Product from "../../../models/products";
 import { NextResponse } from "next/server";
 import { connectDb } from "../../../utils/mongooseConn";
-import { unlink } from "fs/promises";
 import { processImage } from "@/libs/processImage";
 
 
