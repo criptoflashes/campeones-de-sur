@@ -1,17 +1,12 @@
-require('dotenv').config();
+require("dotenv").config();
 import Product from "../../../models/products";
 import { NextResponse } from "next/server";
 import { connectDb } from "../../../utils/mongooseConn";
 import { unlink } from "fs/promises";
 import { processImage } from "@/libs/processImage";
-import {v2 as cloudinary} from 'cloudinary';
 
 
-cloudinary.config({ 
-  cloud_name: process.env.CLOUD_NAME, 
-  api_key: process.env.CLOUD_API_KEY,
-  api_secret: process.env.CLOUD_API_SECRET,
-});
+
 
 
 
@@ -31,32 +26,31 @@ export async function POST(request) {
   await connectDb();
   try {
     const data = await request.formData();
-    const image = data.get("image")
+    const image = data.get("image");
 
     const title = data.get("title");
     const category = data.get("category");
     const description = data.get("description");
 
-   //save image to local
-    const buffer = await processImage(image)
+    //save image to local
 
-   
-   //upload photos to cloudinary
-const res =  await cloudinary.uploader.upload(buffer)
-/* console.log("cloudy", res) */
 
-const imageUrl =   res.secure_url
+  if(!image){
+    return NextResponse.json ("no se ha subido ninguna imagen", { status: 400})
+  }
 
-/* console.log(title, category, description, imageUrl, "infoo") */
+     const imageUrl = await processImage(image); 
 
- 
-    
+    /* console.log(title, category, description, imageUrl, "infoo") */
 
-    const newProduct = await new Product({title, category, description, imageUrl  });
+    const newProduct = await new Product({
+      title,
+      category,
+      description,
+      imageUrl,
+    });
     const savedProduct = await newProduct.save();
     /*  console.log("este", savedProduct);  */
-
-
 
     return NextResponse.json({
       message: "El producto ha sido creado",
