@@ -20,7 +20,7 @@ export const dynamic = 'force-dynamic';
 export default async function DashboardCardContainer() {
   const showProducts = await loadProducts()
   return (
-    <div className= "grid md:grid-cols-3 gap-2 ">
+    <div className= "grid grid-cols-4 grid-rows-auto gap-4">
        {/* {JSON.stringify(showProducts)}  */}
         {showProducts.map(product => (
         <CardAdminProducts product={product} key={product._id}/>
