@@ -44,17 +44,3 @@ export async function processImage(image) {
   return imageUrl;
 }
 
-/* export async function processImage(image) {
-    const bytes = await image.arrayBuffer();
-    const buffer =  Buffer.from(bytes);
-    const name = uuidv4()
-    const ext = image.type.split("/")[1]
-
-
-    console.log(temporaryDirectory);
- 
-    const filePath = path.join(temporaryDirectory, `/${name}.${ext}`);
-    console.log("file.path", filePath)
-    await writeFile(filePath, buffer);
-    return filePath
-  } */
