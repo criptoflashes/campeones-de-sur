@@ -1,7 +1,8 @@
 import Product from "../../../../models/products";
 import { NextResponse } from "next/server";
 import { connectDb } from "../../../../utils/mongooseConn";
-
+import cloudinary from "@/libs/cloudinaryConn";
+import { processImage } from "@/libs/processImage";
 
 export async function GET(request, { params }) {
   console.log(params);
@@ -20,10 +21,8 @@ export async function GET(request, { params }) {
   }
 }
 
-
-
 export async function DELETE(request, { params }) {
- await connectDb();
+  await connectDb();
   try {
     const productDeleted = await Product.findByIdAndDelete(params.id);
 
@@ -34,7 +33,8 @@ export async function DELETE(request, { params }) {
     }
 
     return NextResponse.json({
-      message: "Eliminando producto", productDeleted,
+      message: "Eliminando producto",
+      productDeleted,
     });
   } catch (error) {
     return NextResponse.json(error.message, {
@@ -44,18 +44,66 @@ export async function DELETE(request, { params }) {
 }
 
 export async function PUT(request, { params }) {
-  const body = await request.json();
- await connectDb();
-  try {
-  
-    // new: true returns actualized data
-    const productUpdated = await Product.findByIdAndUpdate(params.id, body, {
-      new: true,
-    });
+  await connectDb();
 
-    return NextResponse.json({
-      productUpdated,
-    });
+  try {
+    const data = await request.formData();
+    const image = data.get("image");
+    /*     const updateData = {
+      title: data.get("title"),
+      category: data.get("category"),
+      description: data.get("description"),
+    }; */
+    const title = data.get("title");
+    const category = data.get("category");
+    const description = data.get("description");
+
+    if (!data.get("title")) {
+      return NextResponse.json(
+        {
+          message: "title is required",
+        },
+        { status: 400 }
+      );
+    }
+
+    if (image) {
+      const res = await processImage(image);
+      console.log("image URL", res);
+
+      //add imageUrl property to the updateData object
+      /* updateData.imageUrl = res; */
+
+      /* console.log("updateData", updateData); */
+      // new: true returns actualized data
+      const productUpdatedWithImage = await Product.findByIdAndUpdate(
+        params.id,
+        {
+          new: true,
+
+          title,
+          category,
+          description,
+          imageUrl: res
+        }
+      );
+
+      return NextResponse.json({
+        productUpdatedWithImage,
+      });
+    } else {
+      const productUpdated = await Product.findByIdAndUpdate(params.id, {
+        new: true,
+
+        title,
+        category,
+        description
+        
+      });
+      return NextResponse.json({
+        productUpdated,
+      });
+    }
   } catch (error) {
     return NextResponse.json(error.message, {
       status: 400,

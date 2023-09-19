@@ -21,21 +21,48 @@ function AdminDashboard() {
   const router = useRouter()
   const formRef = useRef()
 
-  const handleChange = (e) => {
-    console.log(e.target.value)
-    console.log(e.target.name)
-    setNewProduct({ ...newProduct, [e.target.name]: e.target.value })
+
+
+
+
+
+  //gettin data to update later
+
+  const getProduct = async () => {
+    const res = await fetch(`/api/quesos/${params.id}`)
+    const data = await res.json()
+   
+    setNewProduct({
+      title: data.productFound.title,
+      description: data.productFound.description,
+      category: data.productFound.category
+
+    })
 
   }
+  useEffect(() => {
+    if (params.id) {
+      getProduct()
+    }
+  }, [])
+
 
 
   //Submit
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    createProduct()
+
+    await createProduct()
+
   }
 
+  const handleChange = (e) => {
+  /*   console.log(e.target.value)
+    console.log(e.target.name) */
 
+    setNewProduct({ ...newProduct, [e.target.name]: e.target.value })
+
+  }
   //POST product
   const createProduct = async () => {
     try {
@@ -55,13 +82,16 @@ function AdminDashboard() {
           }
         })
       } else {
-        const res = await axios.put("/api/quesos" + params.id, formData, {
+ console.log("entro")
+        const res = await axios.put("/api/quesos/" + params.id, formData, {
           headers: {
             "Content-Type": "multipart/form-data"
           }
         })
+        console.log("paso")
+        console.log(res)
       }
-      console.log(formData)
+      
       formRef.current.reset();
 
       router.refresh()
@@ -113,9 +143,7 @@ function AdminDashboard() {
     } */
 
 
-  /*   useEffect(() => {
-    console.log(params.id, "hey")
-    }, []) */
+
 
 
   return (
@@ -135,10 +163,10 @@ function AdminDashboard() {
 
 
           </header>
-          <textarea type="text" name="title" placeholder="Título" className="bg-gray-300 border-2 w-full p-4 rounded-lg my-4" onChange={handleChange}></textarea>
+          <textarea type="text" name="title" placeholder="Título" className="bg-gray-300 border-2 w-full p-4 rounded-lg my-4" onChange={handleChange} value={newProduct.title}></textarea>
 
 
-          <select name="category" className="bg-gray-300 border-2 w-1/2 p-4 rounded-lg my-4" onChange={handleChange}>
+          <select name="category" className="bg-gray-300 border-2 w-1/2 p-4 rounded-lg my-4" onChange={handleChange} value={newProduct.category}>
             <optgroup>
               <option disabled>Selecciona una categoría</option>
 
@@ -162,8 +190,14 @@ function AdminDashboard() {
           />
 
 
-          <input type="text" name="description" placeholder="Descripción" className="bg-gray-300 border-2 w-full p-4 rounded-lg my-4" rows={3} onChange={handleChange} />
-          <button type="submit" className="bg-green-600 hover:bg-green-700 text-white font-bold px-4  p-2 rounded-lg">Guardar</button>
+          <input type="text" name="description" placeholder="Descripción" className="bg-gray-300 border-2 w-full p-4 rounded-lg my-4" rows={3} onChange={handleChange} value={newProduct.description} />
+
+
+
+          <button type="submit" className="bg-green-600 hover:bg-green-700 text-white font-bold px-4  p-2 rounded-lg">    {
+            !params.id ? "Create" : "Update"
+
+          }</button>
         </form>
       </div>
 
