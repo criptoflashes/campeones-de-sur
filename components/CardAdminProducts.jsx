@@ -25,7 +25,7 @@ import Link from 'next/link';
 function CardAdminProducts({ product }) {
   return (
     <Link
-      className="bg-gray-400 text-white rounded-md hover:cursor-pointer hover:bg-gray-700 my-8"
+      className="bg-gray-400 text-white rounded-md hover:cursor-pointer hover:bg-gray-700 my-1"
       href={`/adminProducts/${product._id}`}
     >
       <div className="relative">
