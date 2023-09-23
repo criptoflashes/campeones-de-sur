@@ -31,8 +31,7 @@ export default async function DashboardCardContainer() {
 
       ))
 
-      }    {/*  <ShowAllProducts showProducts = {allProducts} /> */}
-
+      }   
     </div>
   )
 }

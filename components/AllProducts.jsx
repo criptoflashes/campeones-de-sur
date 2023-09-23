@@ -16,28 +16,24 @@ function AllProducts() {
 
 
     return (
-        <div>
-
-            <div className="grid grid-cols-4 grid-rows-auto gap-4">
-                {error ? (
-                    <p>some error</p>
-                ) : isLoading || isFetching ? (
-                    <p>loading...</p>
-                ) : (
 
 
-                    data?.map((product) => (
-                        <div key={product.title}>
-                            <CardProducts product={product} />
-
-                        </div>
-
-                    ))
-                )}
-            </div>
+        <div className="grid grid-cols-4 grid-rows-auto gap-4">
+            {error ? (
+                <p>some error</p>
+            ) : isLoading || isFetching ? (
+                <p>loading...</p>
+            ) : (
 
 
+                data?.map((product) => (
+                    <CardProducts product={product} />
+
+                ))
+            )}
         </div>
+
+
     )
 }
 
