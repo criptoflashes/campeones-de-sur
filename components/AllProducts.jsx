@@ -27,7 +27,7 @@ function AllProducts() {
 
 
                 data?.map((product) => (
-                    <CardProducts product={product} />
+                    <CardProducts product={product} key={product.title}/>
 
                 ))
             )}
