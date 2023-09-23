@@ -1,6 +1,6 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
-
+import { Providers } from '@/redux/providers'
 import Announcement from '/components/Announcement';
 import Navigation from '/components/Navigation'
 import Footer from "/components/Footer";
@@ -17,20 +17,20 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" data-theme="mytheme">
-       
-      <body className= {`${inter.className}`} >
-     {/*  <div style={{zIndex: -2, position: "relative", width:"100vw", nheight:"100vh"}}> */}
-      {/* <Image src={logo} width="200" height="200" objectFit="center"  /> */}
-      <Announcement/>
-      <Navigation />
-     
-      
-      
-      {children}
-     
-        <Footer/>
+
+      <body className={`${inter.className}`} >
+        <Providers>
+          <Announcement />
+          <Navigation />
+
+
+
+          {children}
+
+          <Footer />
+        </Providers>
         {/* </div> */}
-        </body>
+      </body>
     </html>
   )
 }
