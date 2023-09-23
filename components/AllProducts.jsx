@@ -1,5 +1,5 @@
 "use client"
-import CardProducts from './CardAdminProducts';
+import CardProducts from './CardProducts';
 /* API products state */
 import { useGetProductsQuery } from '@/redux/services/productApi'
 
