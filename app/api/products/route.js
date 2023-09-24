@@ -31,9 +31,10 @@ export async function POST(request) {
     //save image to local
 
 
-  if(!image){
+/*   if(!image){
     return NextResponse.json ("no se ha subido ninguna imagen", { status: 400})
-  }
+  } */
+
 
      const imageUrl = await processImage(image); 
 

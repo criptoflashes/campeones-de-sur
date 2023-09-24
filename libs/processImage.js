@@ -4,13 +4,13 @@ import { v4 as uuidv4 } from "uuid";
 /* import os from 'os' */
 import temporaryDirectory from "temp-dir";
 import { unlink } from "fs/promises";
-import cloudinary from "@/libs/cloudinaryConn";
+import { v2 as cloudinary } from "cloudinary";
 
-/* cloudinary.config({
+cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
   api_key: process.env.CLOUD_API_KEY,
   api_secret: process.env.CLOUD_API_SECRET,
-}); */
+});
 
 export async function processImage(image) {
   const bytes = await image.arrayBuffer();
