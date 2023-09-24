@@ -6,11 +6,8 @@ import { processImage } from "@/libs/processImage";
 
 
 
-
-
-
 export async function GET() {
-  await connectDb();
+/*   await connectDb(); */
   try {
     const product = await Product.find();
     return NextResponse.json(product);
@@ -22,7 +19,7 @@ export async function GET() {
 }
 
 export async function POST(request) {
-  await connectDb();
+ /*  await connectDb(); */
   try {
     const data = await request.formData();
     const image = data.get("image");
