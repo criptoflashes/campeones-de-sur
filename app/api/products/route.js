@@ -36,7 +36,7 @@ export async function POST(request) {
   } */
 
 
-     const imageUrl = await processImage(image); 
+     /* const imageUrl = await processImage(image);  */
 
     /* console.log(title, category, description, imageUrl, "infoo") */
 
@@ -44,7 +44,7 @@ export async function POST(request) {
       title,
       category,
       description,
-      imageUrl,
+      imageUrl : "nada",
     });
     const savedProduct = await newProduct.save();
     /*  console.log("este", savedProduct);  */
