@@ -19,7 +19,7 @@ export async function GET() {
 }
 
 export async function POST(request) {
- /*  await connectDb(); */
+  await connectDb();
   try {
     const data = await request.formData();
     const image = data.get("image");
