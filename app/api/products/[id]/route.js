@@ -68,11 +68,34 @@ export async function PUT(request, { params }) {
     }
 
     if (image) {
-      const res = await processImage(image);
-      console.log("image URL", res);
+      
+    
 
       //add imageUrl property to the updateData object
       /* updateData.imageUrl = res; */
+
+      const buffer = await processImage(image);
+
+      const res = await new Promise((resolve, reject) => {
+        cloudinary.uploader
+          .upload_stream(
+            {
+              resource_type: "image",
+            },
+            async (err, result) => {
+              if (err) {
+                console.log(err);
+                reject(err);
+              }
+  
+              resolve(result);
+            }
+          )
+          .end(buffer);
+      });
+
+
+
 
       /* console.log("updateData", updateData); */
       // new: true returns actualized data
@@ -84,7 +107,7 @@ export async function PUT(request, { params }) {
           title,
           category,
           description,
-          imageUrl: res
+          imageUrl : res.secure_url,
         }
       );
 

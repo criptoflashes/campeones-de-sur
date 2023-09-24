@@ -15,15 +15,24 @@ cloudinary.config({
 export async function processImage(image) {
   const bytes = await image.arrayBuffer();
   const buffer = Buffer.from(bytes);
+  return buffer;
+}
+
+
+
+
+/* export async function processImage(image) {
+  const bytes = await image.arrayBuffer();
+  const buffer = Buffer.from(bytes);
   const name = uuidv4();
-  const ext = image.type.split("/")[1];
+  const ext = image.type.split("/")[1]; */
 
   //create path for images before uploading to cloudinary
-  const filePath = path.join(temporaryDirectory, `/${name}.${ext}`);
+ /*  const filePath = path.join(temporaryDirectory, `/${name}.${ext}`); */
  /*  console.log("file.path", filePath); */
-  await writeFile(filePath, buffer);
-
-  const res = await new Promise((resolve, reject) => {
+/*   await writeFile(filePath, buffer);
+ */
+/*   const res = await new Promise((resolve, reject) => {
     cloudinary.uploader
       .upload_stream({ resource_type: "image" }, async (err, result) => {
         if (err) {
@@ -33,14 +42,14 @@ export async function processImage(image) {
       })
       .end(buffer);
   });
-
-  const imageUrl = res.secure_url;
+ */
+ /*  const imageUrl = res.secure_url; */
 
   //delete image from temp
-  if (res) {
+/*   if (res) {
     await unlink(filePath);
   }
-
-  return imageUrl;
+ */
+/*   return imageUrl;
 }
-
+ */

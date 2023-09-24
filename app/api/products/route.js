@@ -4,6 +4,13 @@ import { NextResponse } from "next/server";
 import { connectDb } from "../../../utils/mongooseConn";
 import { processImage } from "@/libs/processImage";
 
+import { v2 as cloudinary } from "cloudinary";
+
+cloudinary.config({
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.CLOUD_API_KEY,
+  api_secret: process.env.CLOUD_API_SECRET,
+});
 
 
 export async function GET() {
@@ -30,21 +37,40 @@ export async function POST(request) {
 
     //save image to local
 
-
-/*   if(!image){
+  if(!image){
     return NextResponse.json ("no se ha subido ninguna imagen", { status: 400})
-  } */
+  } 
 
 
      /* const imageUrl = await processImage(image);  */
 
     /* console.log(title, category, description, imageUrl, "infoo") */
 
+    const buffer = await processImage(image);
+
+    const res = await new Promise((resolve, reject) => {
+      cloudinary.uploader
+        .upload_stream(
+          {
+            resource_type: "image",
+          },
+          async (err, result) => {
+            if (err) {
+              console.log(err);
+              reject(err);
+            }
+
+            resolve(result);
+          }
+        )
+        .end(buffer);
+    });
+
     const newProduct = await new Product({
       title,
       category,
       description,
-      imageUrl : "nada",
+      imageUrl : res.secure_url,
     });
     const savedProduct = await newProduct.save();
     /*  console.log("este", savedProduct);  */
