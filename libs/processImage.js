@@ -4,13 +4,13 @@ import { v4 as uuidv4 } from "uuid";
 /* import os from 'os' */
 import temporaryDirectory from "temp-dir";
 import { unlink } from "fs/promises";
-import { v2 as cloudinary } from "cloudinary";
+import cloudinary from "@/libs/cloudinaryConn";
 
-cloudinary.config({
+/* cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
   api_key: process.env.CLOUD_API_KEY,
   api_secret: process.env.CLOUD_API_SECRET,
-});
+}); */
 
 export async function processImage(image) {
   const bytes = await image.arrayBuffer();
@@ -20,7 +20,7 @@ export async function processImage(image) {
 
   //create path for images before uploading to cloudinary
   const filePath = path.join(temporaryDirectory, `/${name}.${ext}`);
-  console.log("file.path", filePath);
+ /*  console.log("file.path", filePath); */
   await writeFile(filePath, buffer);
 
   const res = await new Promise((resolve, reject) => {
