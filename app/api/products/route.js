@@ -45,7 +45,7 @@ export async function POST(request) {
      const imageUrl = await processImage(image); 
 
     /* console.log(title, category, description, imageUrl, "infoo") */
-
+/* console.log(imageUrl) */
   
 
     const newProduct = await new Product({
