@@ -12,7 +12,6 @@ cloudinary.config({
   api_secret: process.env.CLOUD_API_SECRET,
 });
 
-
 export async function GET() {
   await connectDb();
   try {
@@ -37,16 +36,16 @@ export async function POST(request) {
 
     //save image to local
 
-  if(!image){
-    return NextResponse.json ("no se ha subido ninguna imagen", { status: 400})
-  } 
+    if (!image) {
+      return NextResponse.json("no se ha subido ninguna imagen", {
+        status: 400,
+      });
+    }
 
-
-     const imageUrl = await processImage(image); 
+    const imageUrl = await processImage(image);
 
     /* console.log(title, category, description, imageUrl, "infoo") */
-/* console.log(imageUrl) */
-  
+    console.log("imageURl", imageUrl)
 
     const newProduct = await new Product({
       title,
