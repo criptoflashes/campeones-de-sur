@@ -34,7 +34,7 @@ export async function savePhotosToTemp(image) {
 }
 
 async function uploadPhotosToCloudinary(newFile) {
-  const newFilePath = newFile.filepath
+  const newFilePath =  newFile.filepath
   console.log("newFilePath", newFilePath)
   const res = await cloudinary.uploader.upload(newFilePath);
 console.log("res", res)
@@ -47,9 +47,12 @@ export async function processImage(image) {
     /* console.log(newFile); */
 
     const photos = await uploadPhotosToCloudinary(newFile);
-   /*  console.log("photos", photos);
-    console.log("photos.secure_url", photos.secure_url); */
-    const imageUrl = photos.secure_url
+    
+    const photosJson =  photos.secure_url
+    console.log("photosJson", photosJson);
+   
+    /* console.log("photos.secure_url", photos.secure_url); */
+    const imageUrl = photosJson
    /*  console.log("typeof" ,typeof imageUrl)
     console.log("imageUrl", imageUrl); */
     return imageUrl
