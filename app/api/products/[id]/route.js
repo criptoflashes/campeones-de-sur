@@ -74,9 +74,9 @@ export async function PUT(request, { params }) {
       //add imageUrl property to the updateData object
       /* updateData.imageUrl = res; */
 
-      const buffer = await processImage(image);
+      const imageUrl = await processImage(image);
 
-      const res = await new Promise((resolve, reject) => {
+/*       const res = await new Promise((resolve, reject) => {
         cloudinary.uploader
           .upload_stream(
             {
@@ -92,7 +92,7 @@ export async function PUT(request, { params }) {
             }
           )
           .end(buffer);
-      });
+      }); */
 
 
 
@@ -107,7 +107,7 @@ export async function PUT(request, { params }) {
           title,
           category,
           description,
-          imageUrl : res.secure_url,
+          imageUrl 
         }
       );
 

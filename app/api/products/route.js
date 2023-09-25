@@ -42,35 +42,17 @@ export async function POST(request) {
   } 
 
 
-     /* const imageUrl = await processImage(image);  */
+     const imageUrl = await processImage(image); 
 
     /* console.log(title, category, description, imageUrl, "infoo") */
 
-    const buffer = await processImage(image);
-
-    const res = await new Promise((resolve, reject) => {
-      cloudinary.uploader
-        .upload_stream(
-          {
-            resource_type: "image",
-          },
-          async (err, result) => {
-            if (err) {
-              console.log(err);
-              reject(err);
-            }
-
-            resolve(result);
-          }
-        )
-        .end(buffer);
-    });
+  
 
     const newProduct = await new Product({
       title,
       category,
       description,
-      imageUrl : res.secure_url,
+      imageUrl,
     });
     const savedProduct = await newProduct.save();
     /*  console.log("este", savedProduct);  */
