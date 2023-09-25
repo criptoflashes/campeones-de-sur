@@ -14,7 +14,7 @@ cloudinary.config({
 
 
 export async function GET() {
-/*   await connectDb(); */
+  await connectDb();
   try {
     const product = await Product.find();
     return NextResponse.json(product);
