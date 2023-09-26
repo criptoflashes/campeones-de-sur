@@ -23,7 +23,7 @@ export async function savePhotosToTemp(image) {
 
   const temporaryDirector = temporaryDirectory;
   const tempdir = os.tmpdir()
-  const uploadDir = path.join(tempdir, `/${name}.${ext}`);
+  const uploadDir = path.join(temporaryDirector, `/${name}.${ext}`);
   /* const uploadDirOS = path.join(tempdir, `/${name}.${ext}`);  */
   /*  console.log("dir",uploadDir)
  console.log("dirOS",uploadDirOS) */

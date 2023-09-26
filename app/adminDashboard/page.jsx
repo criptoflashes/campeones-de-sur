@@ -55,12 +55,7 @@ function AdminDashboard() {
     e.preventDefault()
 
     await createProduct()
-/*     createProd({
-      title: newProduct.title,
-      category: newProduct.category,
-      description: newProduct.description,
-      image: file,
-    }) */
+
   }
 
   const handleChange = (e) => {

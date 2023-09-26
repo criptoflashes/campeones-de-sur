@@ -61,6 +61,7 @@ export async function POST(request) {
       title: data.get("title"),
       category: data.get("category"),
       description: data.get("description"),
+      imageUrl: imageUrl,
     });
   } catch (error) {
     return NextResponse.json(error.message, {
