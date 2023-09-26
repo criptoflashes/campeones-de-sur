@@ -1,4 +1,4 @@
-
+/* 
 
 import AllProducts from '@/components/AllProducts';
 
@@ -15,3 +15,4 @@ function ShowAllProducts() {
 }
 
 export default ShowAllProducts
+ */
