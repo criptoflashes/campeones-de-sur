@@ -42,10 +42,14 @@ export async function POST(request) {
       });
     }
 
+
+
+
+
     const imageUrl = await processImage(image);
 
     /* console.log(title, category, description, imageUrl, "infoo") */
-    console.log("imageURl", imageUrl)
+    console.log("imageURl", imageUrl);
 
     const newProduct = await new Product({
       title,
