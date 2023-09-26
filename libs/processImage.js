@@ -98,6 +98,8 @@ await writeFile(uploadDir, buffer);
 
 
 
+  await unlink(uploadDir);
+
  const res = await new Promise((resolve, reject) => {
     cloudinary.uploader
       .upload_stream(  { resource_type: "image" }, async (err, result) => {
@@ -113,9 +115,7 @@ await writeFile(uploadDir, buffer);
   const imageUrl = res.secure_url; 
 
 //delete image from temp
-  if (res) {
-    await unlink(uploadDir);
-  }
+ 
  return imageUrl;
 }
  
