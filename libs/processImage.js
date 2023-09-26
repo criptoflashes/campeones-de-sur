@@ -22,8 +22,8 @@ export async function savePhotosToTemp(image) {
   /* console.log(buffer) */
 
   const temporaryDirector = temporaryDirectory;
-  /* const tempdir = os.tmpdir() */
-  const uploadDir = path.join(temporaryDirector, `/${name}.${ext}`);
+  const tempdir = os.tmpdir()
+  const uploadDir = path.join(tempdir, `/${name}.${ext}`);
   /* const uploadDirOS = path.join(tempdir, `/${name}.${ext}`);  */
   /*  console.log("dir",uploadDir)
  console.log("dirOS",uploadDirOS) */
@@ -38,22 +38,36 @@ async function uploadPhotosToCloudinary(newFile) {
   const newFilePath = newFile.filepath;
   console.log("newFilePath", newFilePath);
 
-  return new Promise(async (resolve, reject) => {
+/*   return new Promise(async (resolve, reject) => {
     try {
       const res = await cloudinary.uploader.upload(newFilePath);
-   
 
-     /*  const imageUrlToString = res.secure_url;  */
-      /* const jsonResponse = await res.json(); */
-     
+      console.log("tipo", typeof res);
+
       resolve(res);
-    
     } catch (error) {
       // Manejar cualquier error aquí
       console.error("Error al cargar la imagen a Cloudinary:", error);
       reject(error);
     }
-  });
+  }); */
+  try {
+    const result = await cloudinary.uploader.upload(newFilePath, { resource_type: "image" });
+
+    // Convierte la respuesta a JSON utilizando .json()
+    const data =  JSON.stringify(result);
+    console.log("Resultado de Cloudinary:", data);
+
+    return data;
+  } catch (error) {
+    // Manejar cualquier error aquí
+    console.error("Error al cargar la imagen a Cloudinary:", error);
+    throw error; // Lanza el error para que se maneje en el código que llama a esta función
+  }
+
+
+
+
 }
 
 export async function processImage(image) {
@@ -62,10 +76,10 @@ export async function processImage(image) {
     /* console.log(newFile); */
 
     const photos = await uploadPhotosToCloudinary(newFile);
+console.log("photosjson", photos)
+    const imageUrl = photos.secure_url;
 
-    const imageUrl = String(photos.secure_url)
-
-console.log("PP", imageUrl)
+    console.log("PP", imageUrl);
     /* console.log("photos.secure_url", photos.secure_url); */
     /* const imageUrl = photosToString; */
     /*  console.log("typeof" ,typeof imageUrl)
