@@ -6,6 +6,7 @@ import os from "os";
 import temporaryDirectory from "temp-dir";
 import { unlink } from "fs/promises";
 import { v2 as cloudinary } from "cloudinary";
+import util from "util";
 /* import cloudinary from "./cloudinaryConn"; */
 cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
@@ -34,11 +35,25 @@ export async function savePhotosToTemp(image) {
 }
 
 async function uploadPhotosToCloudinary(newFile) {
-  const newFilePath =  newFile.filepath
-  console.log("newFilePath", newFilePath)
-  const res = await cloudinary.uploader.upload(newFilePath);
-console.log("res", res)
-  return res;
+  const newFilePath = newFile.filepath;
+  console.log("newFilePath", newFilePath);
+
+  return new Promise(async (resolve, reject) => {
+    try {
+      const res = await cloudinary.uploader.upload(newFilePath);
+   
+
+     /*  const imageUrlToString = res.secure_url;  */
+      /* const jsonResponse = await res.json(); */
+     
+      resolve(res);
+    
+    } catch (error) {
+      // Manejar cualquier error aquí
+      console.error("Error al cargar la imagen a Cloudinary:", error);
+      reject(error);
+    }
+  });
 }
 
 export async function processImage(image) {
@@ -47,17 +62,17 @@ export async function processImage(image) {
     /* console.log(newFile); */
 
     const photos = await uploadPhotosToCloudinary(newFile);
-    
-    const photosJson =  photos.secure_url
-    console.log("photosJson", photosJson);
-   
+
+    const photosToString = photos.secure_url.toString();
+    console.log("photosToString", photosToString);
+
     /* console.log("photos.secure_url", photos.secure_url); */
-    const imageUrl = photosJson
-   /*  console.log("typeof" ,typeof imageUrl)
+    const imageUrl = photosToString;
+    /*  console.log("typeof" ,typeof imageUrl)
     console.log("imageUrl", imageUrl); */
-    return imageUrl
+    return imageUrl;
   } catch (error) {
-    return { errMsg: `this error ${ error.message} ` };
+    return { errMsg: `this error ${error.message} ` };
   }
 }
 
