@@ -55,10 +55,10 @@ async function uploadPhotosToCloudinary(newFile) {
     const result = await cloudinary.uploader.upload(newFilePath, { resource_type: "image" });
 
     // Convierte la respuesta a JSON utilizando .json()
-    const data =  JSON.stringify(result);
-    console.log("Resultado de Cloudinary:", data);
+    return  result;
+    
 
-    return data;
+    
   } catch (error) {
     // Manejar cualquier error aquí
     console.error("Error al cargar la imagen a Cloudinary:", error);

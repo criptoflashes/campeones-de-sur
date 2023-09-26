@@ -2,11 +2,13 @@
 import axios from "axios";
 import { useState, useEffect, useRef } from "react"
 import { useRouter, useParams } from "next/navigation"
-
+/* import { useCreateProductMutation } from "@/redux/services/productApi"; */
 
 export const dynamic = 'force-dynamic';
 
 function AdminDashboard() {
+
+  /* const [createProd] = useCreateProductMutation() */
 
 
   let [newProduct, setNewProduct] = useState({
@@ -53,7 +55,12 @@ function AdminDashboard() {
     e.preventDefault()
 
     await createProduct()
-
+/*     createProd({
+      title: newProduct.title,
+      category: newProduct.category,
+      description: newProduct.description,
+      image: file,
+    }) */
   }
 
   const handleChange = (e) => {
@@ -97,9 +104,7 @@ function AdminDashboard() {
       router.refresh()
       router.push('/adminProducts')
 
-      /* console.log(data) */
-      /*  return NextResponse.json({ data }) */
-
+  
 
     } catch (error) {
       console.log(error.message)

@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
     <html lang="en" data-theme="mytheme">
 
       <body className={`${inter.className}`} >
-        <Providers>
+      {/*   <Providers> */}
           <Announcement />
           <Navigation />
 
@@ -28,7 +28,7 @@ export default function RootLayout({ children }) {
           {children}
 
           <Footer />
-        </Providers>
+  {/*       </Providers> */}
         {/* </div> */}
       </body>
     </html>

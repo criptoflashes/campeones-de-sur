@@ -3,11 +3,11 @@ import { useRef } from "react";
 import { motion, useScroll, useSpring } from "framer-motion"
 
 /* COUNTER */
-import { decrement, increment, reset } from "@/redux/features/counterSlice";
-import { useDispatch, useSelector } from "react-redux";
+/* import { decrement, increment, reset } from "@/redux/features/counterSlice";
+import { useDispatch, useSelector } from "react-redux"; */
 
 /* API products state */
-import { useGetProductsQuery } from '@/redux/services/productApi'
+/* import { useGetProductsQuery } from '@/redux/services/productApi' */
 
 
 function MainContentHome() {
@@ -26,12 +26,12 @@ function MainContentHome() {
     const smoothOpacity = useSpring(scrollYProgress, { stiffness: 100, damping: 50, mass: 0.5 })
 
     /* API products state */
-    const { isLoading, isFetching, data, error } = useGetProductsQuery(null);
+/*     const { isLoading, isFetching, data, error } = useGetProductsQuery(null);
 
     if (isLoading || isFetching) return <p>loading...</p>;
     if (error) return <p>some error</p>;
     console.log("la dataa", data)
-
+ */
 
 
 
@@ -73,7 +73,7 @@ function MainContentHome() {
 
 
 
-
+{/* 
             <div className="grid grid-cols-3">
                 {error ? (
                     <p>some error</p>
@@ -87,7 +87,7 @@ function MainContentHome() {
                         </div>
                     ))
                 )}
-            </div>
+            </div> */}
 
 
         </div>
