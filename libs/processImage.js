@@ -63,12 +63,11 @@ export async function processImage(image) {
 
     const photos = await uploadPhotosToCloudinary(newFile);
 
-    const photosToString = await photos.secure_url.toString();
-    console.log(typeof photosToString)
-    console.log("photosToString", photosToString);
+    const imageUrl = String(photos.secure_url)
 
+console.log("PP", imageUrl)
     /* console.log("photos.secure_url", photos.secure_url); */
-    const imageUrl = photosToString;
+    /* const imageUrl = photosToString; */
     /*  console.log("typeof" ,typeof imageUrl)
     console.log("imageUrl", imageUrl); */
     return imageUrl;
