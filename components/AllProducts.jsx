@@ -6,8 +6,8 @@ import CardProducts from './CardProducts';
 
 
 
-/* function AllProducts() {
- */
+function AllProducts() {
+
     /* API products state */
     /* const { isLoading, isFetching, data, error } = useGetProductsQuery(null);
 
@@ -16,9 +16,9 @@ import CardProducts from './CardProducts';
 
  */
 
-/*     return (
+    return (
         <div className="grid grid-cols-4 grid-rows-auto gap-4">
-            {error ? (
+            {/* {error ? (
                 <p>some error</p>
             ) : isLoading || isFetching ? (
                 <p>loading...</p>
@@ -27,7 +27,8 @@ import CardProducts from './CardProducts';
                     <CardProducts product={product} key={product.title}/>
 
                 ))
-            )}
+            )} */}
+            <p> 123</p>
         </div>
 
 
@@ -35,4 +36,3 @@ import CardProducts from './CardProducts';
 }
 
 export default AllProducts
- */

@@ -1,6 +1,6 @@
-/* 
 
-import AllProducts from '@/components/AllProducts';
+
+/* import AllProducts from '@/components/AllProducts'; */
 
 
 function ShowAllProducts() {
@@ -9,10 +9,10 @@ function ShowAllProducts() {
 
 
   return (
-      <AllProducts />
+      
+      <h1>Todos los productos</h1>
 
   );
 }
 
 export default ShowAllProducts
- */
