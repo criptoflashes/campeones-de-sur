@@ -78,7 +78,7 @@ function AdminDashboard() {
       }
 
       if (!params.id) {
-        const result = await axios.post("/api/products", formData, {
+        const result = await axios.post("https://campeones-del-sur.vercel.app/api/products", formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           }
