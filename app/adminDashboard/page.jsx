@@ -78,7 +78,7 @@ function AdminDashboard() {
       }
 
       if (!params.id) {
-        const res = await axios.post("https://campeones-del-sur.vercel.app/api/products", formData, {
+        const result = await axios.post("https://campeones-del-sur.vercel.app/api/products", formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           }
@@ -91,7 +91,7 @@ function AdminDashboard() {
           }
         })
         console.log("paso")
-        console.log(res)
+        
       }
 
       formRef.current.reset();
@@ -99,10 +99,10 @@ function AdminDashboard() {
       router.refresh()
       router.push('/adminProducts')
 
-  
+     
 
     } catch (error) {
-      console.log(error.message)
+      return error.message
     }
   }
 
