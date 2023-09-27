@@ -102,9 +102,15 @@ function AdminDashboard() {
      
 
     } catch (error) {
-      return error.message
-    }
+      if (error.response && error.response.data) {
+        // Mostrar el error de Cloudinary en la consola o en la interfaz de usuario
+        console.error("Error de Cloudinary:", error.response.data.error);
+      } else {
+        // Manejar otros errores
+        console.error("Error:", error);
+      }
   }
+}
 
 
 
@@ -131,16 +137,6 @@ function AdminDashboard() {
 
 
 
-  /*   const handleInputFiles = async (e) => {
-      const files = e.target.files;
-      const newFiles = [...files].filter(file => {
-        if (file.size < 1024 * 1024 && file.type.startsWith('image/')) {
-          //only accepts less than 1mb
-          return file
-        }
-      })
-      setFiles(prev => [...newFiles, ...prev])
-    } */
 
 
 

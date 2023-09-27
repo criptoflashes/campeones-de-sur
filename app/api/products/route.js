@@ -72,7 +72,7 @@ async function uploadImageToCloudinary(buffer) {
     return new Promise((resolve, reject) => {
       cloudinary.uploader.upload_stream({ resource_type: "image" }, async (err, result) => {
         if (err) {
-          reject(err);
+          reject({ statusCode: 500, error: err.message });
         } else {
           resolve(result);
         }
@@ -81,9 +81,8 @@ async function uploadImageToCloudinary(buffer) {
   } catch (error) {
     console.error("Error al subir la imagen a Cloudinary:", error);
     /* return { errMsg: `this error ${error.message} ` } */
-    return NextResponse.json(error.message, {
-      status: 402,
-    });
+    throw error;
+  
   }
 }
 
