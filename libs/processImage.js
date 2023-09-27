@@ -122,19 +122,20 @@ export async function processImage(image) {
   const buffer = Buffer.from(bytes);
   /*  const name = uuidv4();
   const ext = image.type.split("/")[1]; */
+
+  try {
+    return new Promise((resolve, reject) => {
+      const uploadStream = cloudinary.uploader.upload_stream(
+        { resource_type: "image" },
+        async (err, result) => {
+          if (err) reject(err);
+          else resolve(result);
+        }
+      )
+      streamifier.createReadStream(buffer).pipe(uploadStream);
+    });
+  } catch (err) {
+    return { errMsg: `this error ${err.message} ` };
   
-    try {
-      return new Promise((resolve, reject) => {
-        const uploadStream = cloudinary.uploader.upload_stream(
-          { resource_type: "image" }, async (err, result)=> {
-            if (err) reject(err);
-            else resolve(result);
-          },
-        );
-        streamifier.createReadStream(buffer).pipe(uploadStream);
-      });
-    } catch (error) {
-      return { errMsg: `this error ${error.message} ` };
-    
-    }
   }
+}
