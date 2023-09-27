@@ -80,8 +80,10 @@ async function uploadImageToCloudinary(buffer) {
     });
   } catch (error) {
     console.error("Error al subir la imagen a Cloudinary:", error);
-    return { errMsg: `this error ${error.message} ` }
-    
+    /* return { errMsg: `this error ${error.message} ` } */
+    return NextResponse.json(error.message, {
+      status: 402,
+    });
   }
 }
 
