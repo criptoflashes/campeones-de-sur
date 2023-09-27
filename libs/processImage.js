@@ -120,10 +120,12 @@ try{
 export async function processImage(image) {
   const bytes = await image.arrayBuffer();
   const buffer = Buffer.from(bytes);
+
+  return buffer
   /*  const name = uuidv4();
   const ext = image.type.split("/")[1]; */
 
-  try {
+/*   try {
     return new Promise((resolve, reject) => {
       const uploadStream = cloudinary.uploader.upload_stream(
         { resource_type: "image" },
@@ -137,5 +139,5 @@ export async function processImage(image) {
   } catch (err) {
     return { errMsg: `this error ${err.message} ` };
   
-  }
+  } */
 }

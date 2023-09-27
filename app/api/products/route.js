@@ -46,9 +46,26 @@ export async function POST(request) {
 
 
 
-    const response = await processImage(image);
-    const imageUrl  = await response.secure_url
-console.log("response", response)
+    const buffer = await processImage(image);
+
+   
+      const res = await new Promise((resolve, reject) => {
+         cloudinary.uploader
+           .upload_stream(  { resource_type: "image" }, async (err, result) => {
+             if (err) {
+               reject(err);
+             }
+             resolve(result);
+           })
+           .end(buffer);
+       }); 
+
+       console.log("ress", res)
+
+
+
+   /*  const imageUrl  = await response.secure_url
+console.log("response", response) */
     /* console.log(title, category, description, imageUrl, "infoo") */
     /* console.log("imageURl", imageUrl); */
 
@@ -56,7 +73,7 @@ console.log("response", response)
       title,
       category,
       description,
-      imageUrl,
+      imageUrl : res.secure_url,
     });
     const savedProduct = await newProduct.save();
     /*  console.log("este", savedProduct);  */
@@ -66,8 +83,10 @@ console.log("response", response)
       title: data.get("title"),
       category: data.get("category"),
       description: data.get("description"),
-      imageUrl: imageUrl,
+      imageUrl: res.secure_url,
     });
+
+
   } catch (error) {
     return NextResponse.json(error.message, {
       status: 402,
