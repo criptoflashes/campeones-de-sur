@@ -14,7 +14,7 @@ async function loadProducts() {
    return data */
 }
 
-/* export const dynamic = 'force-dynamic'; */
+export const dynamic = 'force-dynamic';
 
 export default async function DashboardCardContainer() {
 
