@@ -5,8 +5,8 @@ import { v4 as uuidv4 } from "uuid";
 import os from "os";
 import temporaryDirectory from "temp-dir";
 import { unlink } from "fs/promises";
-import streamifier from 'streamifier';
-import { v2 as cloudinary,  UploadApiResponse  } from "cloudinary";
+import streamifier from "streamifier";
+import { v2 as cloudinary, UploadApiResponse } from "cloudinary";
 import util from "util";
 /* import cloudinary from "./cloudinaryConn"; */
 cloudinary.config({
@@ -20,7 +20,7 @@ cloudinary.config({
   const buffer = Buffer.from(bytes);
   const name = uuidv4();
   const ext = image.type.split("/")[1]; */
-  /* console.log(buffer) */
+/* console.log(buffer) */
 
 /*   const temporaryDirector = temporaryDirectory;
   const tempdir = os.tmpdir()
@@ -48,22 +48,17 @@ cloudinary.config({
       reject(error);
     }
   }); */
-  /* try {
+/* try {
     const result = await cloudinary.uploader.upload(newFilePath, { resource_type: "image" }); */
 
-    // Convierte la respuesta a JSON utilizando .json()
- /*    return  result; */
-    
+// Convierte la respuesta a JSON utilizando .json()
+/*    return  result; */
 
-    
-  /* } catch (error) { */
-    // Manejar cualquier error aquí
-    /* console.error("Error al cargar la imagen a Cloudinary:", error); */
-  /*   throw error; */ // Lanza el error para que se maneje en el código que llama a esta función
- /*  } */
-
-
-
+/* } catch (error) { */
+// Manejar cualquier error aquí
+/* console.error("Error al cargar la imagen a Cloudinary:", error); */
+/*   throw error; */ // Lanza el error para que se maneje en el código que llama a esta función
+/*  } */
 
 /* } */
 
@@ -89,15 +84,13 @@ console.log("photosjson", photos)
   const buffer = Buffer.from(bytes); */
 /*   const name = uuidv4();
   const ext = image.type.split("/")[1];  */
- 
-  /* const fileName = name   */
+
+/* const fileName = name   */
 /* const filePath = uploadDir */
 //create path for images before uploading to cloudinary
 /* const uploadDir = path.join(temporaryDirectory, `/${name}.${ext}`); */
-  /* console.log("file.path", filePath);  */
+/* console.log("file.path", filePath);  */
 /* await writeFile(uploadDir, buffer);  */
-
-
 
 /*   await unlink(uploadDir);
 try{
@@ -113,10 +106,10 @@ try{
   }); */
 /* 
   /* console.log("res cloudinary :",res) */
-  /* const imageUrl = res.secure_url;  */
+/* const imageUrl = res.secure_url;  */
 
 //delete image from temp
- 
+
 /*  return imageUrl;
 }catch(error){
   return { errMsg: `this error ${error.message} ` };
@@ -124,34 +117,29 @@ try{
  
 } */
 
-
-
-
-export async function processImage(image){
-  const newFile = await image;
-
+export async function processImage(image) {
   const bytes = await image.arrayBuffer();
   const buffer = Buffer.from(bytes);
- /*  const name = uuidv4();
-  const ext = image.type.split("/")[1]; */ 
-
-  try{
-    return new Promise((resolve, reject) => {
-      const uploadStream = cloudinary.uploader.upload_stream(
-        {
-          folder: 'events',
-          upload_preset: 'ml_default',
-        },
-        (error, result) => {
-          if (result) resolve(result);
-          else reject(error);
-        },
-      );
-      streamifier.createReadStream(buffer).pipe(uploadStream);
-    });
-  }catch(error){
-    return { errMsg: `this error ${error.message} ` };
+  /*  const name = uuidv4();
+  const ext = image.type.split("/")[1]; */
+  
+    try {
+      return new Promise((resolve, reject) => {
+        const uploadStream = cloudinary.uploader.upload_stream(
+          {
+            folder: 'events',
+            upload_preset: 'ml_default',
+          },
+          (error, result) => {
+            if (result) resolve(result);
+            else reject(error);
+          },
+        );
+        streamifier.createReadStream(buffer).pipe(uploadStream);
+      });
+    } catch (error) {
+      // Maneja cualquier error aquí
+      console.error('Error al subir la imagen:', error);
+      throw error; // Opcional: puedes volver a lanzar el error si quieres propagarlo hacia arriba.
+    }
   }
-
-}
-

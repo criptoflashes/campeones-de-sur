@@ -48,7 +48,7 @@ export async function POST(request) {
 
     const response = await processImage(image);
     const imageUrl  = await response.secure_url
-console.log("imageURL", imageUrl)
+console.log("response", response)
     /* console.log(title, category, description, imageUrl, "infoo") */
     /* console.log("imageURl", imageUrl); */
 
