@@ -130,9 +130,9 @@ export async function processImage(image) {
             folder: 'events',
             upload_preset: 'ml_default',
           },
-          (error, result) => {
+          (result) => {
             if (result) resolve(result);
-            else reject(error);
+            else reject(result.error);
           },
         );
         streamifier.createReadStream(buffer).pipe(uploadStream);
