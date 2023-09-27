@@ -126,13 +126,9 @@ export async function processImage(image) {
     try {
       return new Promise((resolve, reject) => {
         const uploadStream = cloudinary.uploader.upload_stream(
-          {
-            folder: 'events',
-            upload_preset: 'ml_default',
-          },
-          (result) => {
-            if (result) resolve(result);
-            else reject(result.error);
+          { resource_type: "image" }, async (err, result)=> {
+            if (err) reject(err);
+            else resolve(result);
           },
         );
         streamifier.createReadStream(buffer).pipe(uploadStream);
