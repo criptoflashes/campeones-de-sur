@@ -42,29 +42,25 @@ export async function POST(request) {
       });
     }
 
-
-
-
-
     const buffer = await processImage(image);
 
-   
+    try {
       const res = await new Promise((resolve, reject) => {
-         cloudinary.uploader
-           .upload_stream(  { resource_type: "image" }, async (err, result) => {
-             if (err) {
-               reject(err);
-             }
-             resolve(result);
-           })
-           .end(buffer);
-       }); 
+        cloudinary.uploader
+          .upload_stream({ resource_type: "image" }, async (err, result) => {
+            if (err) {
+              reject(err);
+            }
+            resolve(result);
+          })
+          .end(buffer);
+      });
+    } catch (error) {
+      return { errMsg: `this error ${error.message} ` };
+    }
+    console.log("ress", res);
 
-       console.log("ress", res)
-
-
-
-   /*  const imageUrl  = await response.secure_url
+    /*  const imageUrl  = await response.secure_url
 console.log("response", response) */
     /* console.log(title, category, description, imageUrl, "infoo") */
     /* console.log("imageURl", imageUrl); */
@@ -73,7 +69,7 @@ console.log("response", response) */
       title,
       category,
       description,
-      imageUrl : res.secure_url,
+      imageUrl: res.secure_url,
     });
     const savedProduct = await newProduct.save();
     /*  console.log("este", savedProduct);  */
@@ -85,8 +81,6 @@ console.log("response", response) */
       description: data.get("description"),
       imageUrl: res.secure_url,
     });
-
-
   } catch (error) {
     return NextResponse.json(error.message, {
       status: 402,
