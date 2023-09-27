@@ -135,7 +135,7 @@ export async function processImage(image){
  /*  const name = uuidv4();
   const ext = image.type.split("/")[1]; */ 
 
-  
+  try{
     return new Promise((resolve, reject) => {
       const uploadStream = cloudinary.uploader.upload_stream(
         {
@@ -149,7 +149,9 @@ export async function processImage(image){
       );
       streamifier.createReadStream(buffer).pipe(uploadStream);
     });
+  }catch(error){
+    return { errMsg: `this error ${error.message} ` };
   }
 
- 
+}
 
