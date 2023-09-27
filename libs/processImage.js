@@ -138,8 +138,7 @@ export async function processImage(image) {
         streamifier.createReadStream(buffer).pipe(uploadStream);
       });
     } catch (error) {
-      // Maneja cualquier error aquí
-      console.error('Error al subir la imagen:', error);
-      throw error; // Opcional: puedes volver a lanzar el error si quieres propagarlo hacia arriba.
+      return { errMsg: `this error ${error.message} ` };
+    
     }
   }
