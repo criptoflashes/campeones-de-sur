@@ -43,33 +43,13 @@ export async function POST(request) {
     }
 
     const buffer = await processImage(image);
-
-    try {
-      const res = await new Promise((resolve, reject) => {
-        cloudinary.uploader
-          .upload_stream({ resource_type: "image" }, async (err, result) => {
-            if (err) {
-              reject(err);
-            }
-            resolve(result);
-          })
-          .end(buffer);
-      });
-    } catch (error) {
-      return { errMsg: `this error ${error.message} ` };
-    }
-    console.log("ress", res);
-
-    /*  const imageUrl  = await response.secure_url
-console.log("response", response) */
-    /* console.log(title, category, description, imageUrl, "infoo") */
-    /* console.log("imageURl", imageUrl); */
-
+    const response = await uploadImageToCloudinary(buffer);
+   
     const newProduct = await new Product({
       title,
       category,
       description,
-      imageUrl: res.secure_url,
+      imageUrl: response.secure_url,
     });
     const savedProduct = await newProduct.save();
     /*  console.log("este", savedProduct);  */
@@ -79,7 +59,7 @@ console.log("response", response) */
       title: data.get("title"),
       category: data.get("category"),
       description: data.get("description"),
-      imageUrl: res.secure_url,
+      imageUrl: response.secure_url,
     });
   } catch (error) {
     return NextResponse.json(error.message, {
@@ -87,3 +67,25 @@ console.log("response", response) */
     });
   }
 }
+async function uploadImageToCloudinary(buffer) {
+  try {
+    return new Promise((resolve, reject) => {
+      cloudinary.uploader.upload_stream({ resource_type: "image" }, async (err, result) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(result);
+        }
+      }).end(buffer);
+    });
+  } catch (error) {
+    console.error("Error al subir la imagen a Cloudinary:", error);
+    return { errMsg: `this error ${error.message} ` }
+    
+  }
+}
+
+
+
+
+
