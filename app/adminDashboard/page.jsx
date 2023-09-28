@@ -85,10 +85,10 @@ function AdminDashboard() {
       if (!params.id) {
         
         const result = await axios.post("api/products", formData, {
-          headers: {
+          /* headers: { */
             /* "Content-Type": headers["content-type"],  */
-            "Content-Type": "multipart/form-data",
-          }
+           /*  "Content-Type": "multipart/form-data", */
+         /*  } */
         })
       } else {
         console.log("entro")
