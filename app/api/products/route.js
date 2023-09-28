@@ -24,9 +24,17 @@ export async function GET() {
   }
 }
 
+
+export const config = {
+  api: {
+    bodyParser: false,
+  },
+};
+
 export async function POST(request) {
   await connectDb();
   try {
+
     const data = await request.formData();
     const image = data.get("image");
 
