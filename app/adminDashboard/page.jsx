@@ -83,12 +83,12 @@ function AdminDashboard() {
       }
 
       if (!params.id) {
-        
+
         const result = await axios.post("api/products", formData, {
-          /* headers: { */
-            /* "Content-Type": headers["content-type"],  */
-           /*  "Content-Type": "multipart/form-data", */
-         /*  } */
+          headers: {
+
+            "Content-Type": "multipart/form-data",
+          }
         })
       } else {
         console.log("entro")
@@ -98,15 +98,15 @@ function AdminDashboard() {
           }
         })
         console.log("paso")
-        
-      } 
+
+      }
 
       formRef.current.reset();
 
       router.refresh()
       router.push('/adminProducts')
 
-     
+
 
     } catch (error) {
       if (error.response && error.response.data) {
@@ -116,8 +116,8 @@ function AdminDashboard() {
         // Manejar otros errores
         console.error("Error:", error);
       }
+    }
   }
-}
 
 
 

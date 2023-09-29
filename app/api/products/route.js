@@ -6,6 +6,13 @@ import { processImage } from "@/libs/processImage";
 
 import { v2 as cloudinary } from "cloudinary";
 
+export const config = {
+  api: {
+      bodyParser: false,
+  },
+};
+
+
 cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
   api_key: process.env.CLOUD_API_KEY,
