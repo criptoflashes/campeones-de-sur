@@ -6,11 +6,11 @@ import { processImage } from "@/libs/processImage";
 
 import { v2 as cloudinary } from "cloudinary";
 
-export const config = {
+/* export const config = {
   api: {
       bodyParser: false,
   },
-};
+}; */
 
 
 cloudinary.config({
