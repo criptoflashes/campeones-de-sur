@@ -91,8 +91,8 @@ function AdminDashboard() {
         const result = await fetch("/api/products", {
           method: "POST",
           body: formData,
-        }).then(res => res.json())
-          console.log("vvvvvvvv", result)   
+        }).then(res => console.log("vvvvvvvv",res) )
+            
         /* const data = await result.json();
         console.log(data.secure_url) */
 

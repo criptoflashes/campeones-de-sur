@@ -70,7 +70,13 @@ export async function POST(request) {
       category: data.get("category"),
       description: data.get("description"),
       imageUrl: response.secure_url,
-    });
+    }, 
+      /* status: 200, */
+ /*      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+      } */);
   } catch (error) {
     return NextResponse.json(error.message, {
       status: 402,
