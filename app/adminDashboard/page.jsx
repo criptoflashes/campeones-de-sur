@@ -96,7 +96,7 @@ function AdminDashboard() {
         /* const data = await result.json();
         console.log(data.secure_url) */
 
-        const result = await axios.post("api/products", formData, {
+        const result = await axios.post("http://httpbin.org/post", formData, {
           headers: {
 
             "Content-Type": "multipart/form-data",
