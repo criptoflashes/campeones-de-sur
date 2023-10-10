@@ -43,7 +43,7 @@ function AdminDashboard() {
 
   }
   useEffect(() => {
-    
+
     if (params.id) {
       getProduct()
     }
@@ -76,34 +76,34 @@ function AdminDashboard() {
     console.log("eeeeee")
     try {
       const formData = new FormData()
-     formData.append("title", newProduct.title);
+      formData.append("title", newProduct.title);
       formData.append("category", newProduct.category)
       formData.append("description", newProduct.description)
- 
+
       if (file) {
-       
+
         formData.append("image", file)
         console.log("entro")
       }
 
       if (!params.id) {
         console.log("0000")
-        const result = await fetch("/api/products", {
-          method: "POST",
-          body: formData,
-        }).then(res => console.log("vvvvvvvv",res) )
-            
+        /*         const result = await fetch("/api/products", {
+                  method: "POST",
+                  body: formData,
+                }).then(res => console.log("vvvvvvvv",res) ) */
+
         /* const data = await result.json();
         console.log(data.secure_url) */
 
-    /*     const result = await axios.post("api/products", formData, {
+        const result = await axios.post("api/products", formData, {
           headers: {
 
             "Content-Type": "multipart/form-data",
-          } 
-        })*/
+          }
+        }) ; console.log(result) 
       } else {
-        
+
         const res = await axios.put("/api/products/" + params.id, formData, {
           headers: {
             "Content-Type": "multipart/form-data"
