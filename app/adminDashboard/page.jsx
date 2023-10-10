@@ -113,10 +113,6 @@ function AdminDashboard() {
         console.log("paso", res)
       }
 
-      formRef.current.reset();
-
-      router.refresh()
-      router.push('/adminProducts')
 
 
 
@@ -132,8 +128,12 @@ function AdminDashboard() {
   }
 
 
+/* 
+  formRef.current.reset(); */
 
-
+  /* router.refresh()
+  router.push('/adminProducts')
+ */
   const handleDelete = async () => {
     if (window.confirm("¿Estás seguro de borrar este producto?")) {
       try {
