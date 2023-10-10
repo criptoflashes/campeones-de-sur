@@ -2,7 +2,7 @@ require("dotenv").config();
 import Product from "../../../models/products";
 import { NextResponse } from "next/server";
 import { connectDb } from "../../../utils/mongooseConn";
-import { processImage } from "@/libs/processImage";
+/* import { processImage } from "@/libs/processImage"; */
 
 import { v2 as cloudinary } from "cloudinary";
 
@@ -52,6 +52,13 @@ export async function POST(request) {
       });
     }
 
+
+   async function processImage(image) {
+      const bytes = await image.arrayBuffer();
+      const buffer = Buffer.from(bytes);
+    
+      return buffer
+    }
     const buffer = await processImage(image);
     const response = await uploadImageToCloudinary(buffer);
    

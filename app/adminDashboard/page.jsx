@@ -2,6 +2,7 @@
 import axios from "axios";
 import { useState, useEffect, useRef } from "react"
 import { useRouter, useParams } from "next/navigation"
+import FormData from "form-data"
 /* import { useCreateProductMutation } from "@/redux/services/productApi"; */
 
 export const dynamic = 'force-dynamic';
@@ -96,12 +97,9 @@ function AdminDashboard() {
         /* const data = await result.json();
         console.log(data.secure_url) */
 
-        const result = await axios.post("https://httpbin.org/post", formData, {
-          headers: {
-
-            "Content-Type": "multipart/form-data",
-          }
-        }) ; console.log(result) 
+        const result = await axios.post("/api/products", formData, {
+         
+        }); console.log(result)
       } else {
 
         const res = await axios.put("/api/products/" + params.id, formData, {
@@ -118,18 +116,20 @@ function AdminDashboard() {
 
     } catch (error) {
       if (error.response && error.response.data) {
+        console.log(error)
         // Mostrar el error de Cloudinary en la consola o en la interfaz de usuario
         console.error("Error de Cloudinary:", error.response.data.error);
       } else {
         // Manejar otros errores
+        console.log(error)
         console.error("Error:", error);
       }
     }
   }
 
 
-/* 
-  formRef.current.reset(); */
+  /* 
+    formRef.current.reset(); */
 
   /* router.refresh()
   router.push('/adminProducts')
