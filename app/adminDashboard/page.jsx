@@ -92,7 +92,7 @@ function AdminDashboard() {
           method: "POST",
           body: formData,
         }).then(res => res.json())
-        console.log("vvvvvvvv", result)
+          console.log("vvvvvvvv", result)   
         /* const data = await result.json();
         console.log(data.secure_url) */
 
