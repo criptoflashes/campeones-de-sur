@@ -99,7 +99,7 @@ function AdminDashboard() {
 
         const result = await axios.post("/api/products", formData, {
          
-        });.then(res => res.text())
+        }).then(res => res.text())
       } else {
 
         const res = await axios.put("/api/products/" + params.id, formData, {
