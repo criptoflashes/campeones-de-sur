@@ -99,14 +99,14 @@ function AdminDashboard() {
 
         const result = await axios.post("/api/products", formData, {
          
-        }); console.log(result)
+        });.then(res => res.text())
       } else {
 
         const res = await axios.put("/api/products/" + params.id, formData, {
           headers: {
             "Content-Type": "multipart/form-data"
           }
-        }).then(res => res.json())
+        }).then(res => res.text())
 
         console.log("paso", res)
       }
