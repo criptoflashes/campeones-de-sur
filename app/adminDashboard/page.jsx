@@ -97,8 +97,10 @@ function AdminDashboard() {
         /* const data = await result.json();
         console.log(data.secure_url) */
 
-        const result = await axios.post("/api/products", formData, {
-
+        const result = await axios.post("https://campeones-del-sur.vercel.app/api/products", formData, {
+          headers: {
+            "Content-Type": "multipart/form-data"
+          }
         })
         
         console.log(result) /* .then(res => res.json()) */
