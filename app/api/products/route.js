@@ -6,11 +6,11 @@ import { connectDb } from "../../../utils/mongooseConn";
 
 import { v2 as cloudinary } from "cloudinary";
 
-/* export const config = {
+export const config = {
   api: {
       bodyParser: false,
   },
-}; */
+};
 
 cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
