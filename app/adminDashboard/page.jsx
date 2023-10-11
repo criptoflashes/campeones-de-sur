@@ -93,7 +93,8 @@ function AdminDashboard() {
                   method: "POST",
                   body: formData,
                 }).then(res => console.log("vvvvvvvv",res) )
-
+/* const data = await result.json()
+console.log(data) */
         /* const data = await result.json();
         console.log(data.secure_url) */
 
@@ -115,7 +116,11 @@ function AdminDashboard() {
         console.log("paso", res)
       }
 
+      formRef.current.reset(); 
 
+      router.refresh()
+       router.push('/adminProducts')
+     
 
 
     } catch (error) {
@@ -132,12 +137,8 @@ function AdminDashboard() {
   }
 
 
-  /* 
-    formRef.current.reset(); */
-
-  /* router.refresh()
-  router.push('/adminProducts')
- */
+  
+  
   const handleDelete = async () => {
     if (window.confirm("¿Estás seguro de borrar este producto?")) {
       try {
