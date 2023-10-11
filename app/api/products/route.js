@@ -41,7 +41,7 @@ export async function POST(request) {
     const description = data.get("description");
 
     //save image to local
-
+    console.log("en el back");
     if (!image) {
       return NextResponse.json("no se ha subido ninguna imagen", {
         status: 400,

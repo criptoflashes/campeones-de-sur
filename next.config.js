@@ -1,11 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  reactStrictMode: false, 
 experimental:{
   serverActions:true
 },
 images : {
   domains : ['images.pexels.com', 'res.cloudinary.com', 'cloudinary.com']
-},reactStrictMode: false, // React Strict Mode is off
+},
+
 async headers() {
   return [
     {

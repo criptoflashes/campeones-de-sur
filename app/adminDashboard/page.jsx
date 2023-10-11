@@ -89,21 +89,21 @@ function AdminDashboard() {
 
       if (!params.id) {
         console.log("0000")
-        /*         const result = await fetch("/api/products", {
+                const result = await fetch("api/products", {
                   method: "POST",
                   body: formData,
-                }).then(res => console.log("vvvvvvvv",res) ) */
+                }).then(res => console.log("vvvvvvvv",res) )
 
         /* const data = await result.json();
         console.log(data.secure_url) */
 
-        const result = await axios.post("https://campeones-del-sur.vercel.app/api/products", formData, {
+     /*    const result = await axios.post("https://campeones-del-sur.vercel.app/api/products", formData, {
           headers: {
             "Content-Type": "multipart/form-data"
           }
-        })
+        }) */
         
-        console.log(result) /* .then(res => res.json()) */
+        /* console.log(result)  *//* .then(res => res.json()) */
       } else {
 
         const res = await axios.put("/api/products/" + params.id, formData, {
