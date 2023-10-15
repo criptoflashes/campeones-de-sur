@@ -9,7 +9,7 @@ export const dynamic = 'force-dynamic';
 
 function AdminDashboard() {
 
-  /* const [createProd] = useCreateProductMutation() */
+/*   const [createProd] = useCreateProductMutation() */
 
 
   let [newProduct, setNewProduct] = useState({
@@ -89,21 +89,21 @@ function AdminDashboard() {
 
       if (!params.id) {
         console.log("0000")
-                const result = await fetch("api/products", {
-                  method: "POST",
-                  body: formData,
-                }).then(res => console.log("vvvvvvvv",res) )
-/* const data = await result.json()
-console.log(data) */
+        const result = await fetch("api/products", {
+          method: "POST",
+          body: formData,
+        }).then(res => console.log("vvvvvvvv", res))
+        /* const data = await result.json()
+        console.log(data) */
         /* const data = await result.json();
         console.log(data.secure_url) */
 
-     /*    const result = await axios.post("https://campeones-del-sur.vercel.app/api/products", formData, {
-          headers: {
-            "Content-Type": "multipart/form-data"
-          }
-        }) */
-        
+        /*    const result = await axios.post("https://campeones-del-sur.vercel.app/api/products", formData, {
+             headers: {
+               "Content-Type": "multipart/form-data"
+             }
+           }) */
+
         /* console.log(result)  *//* .then(res => res.json()) */
       } else {
 
@@ -116,11 +116,11 @@ console.log(data) */
         console.log("paso", res)
       }
 
-      formRef.current.reset(); 
+      formRef.current.reset();
 
       router.refresh()
-       router.push('/adminProducts')
-     
+      router.push('/adminProducts')
+
 
 
     } catch (error) {
@@ -137,8 +137,8 @@ console.log(data) */
   }
 
 
-  
-  
+
+
   const handleDelete = async () => {
     if (window.confirm("¿Estás seguro de borrar este producto?")) {
       try {

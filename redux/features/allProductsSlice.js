@@ -1,4 +1,4 @@
-/* import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = 0
 
@@ -14,4 +14,4 @@ export const allProductsSlice = createSlice({
 
 export const {} = allProductsSlice.actions
 
-export default allProductsSlice.reducer */
+export default allProductsSlice.reducer

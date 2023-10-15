@@ -1,5 +1,5 @@
-/* import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"; */
-/* 
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"; 
+
 export const productsApi = createApi({
   reducerPath: "productsAPI",
   baseQuery: fetchBaseQuery({
@@ -17,6 +17,6 @@ export const productsApi = createApi({
       }),
     }),
   }),
-}); */
+}); 
 
-/* export const { useGetProductsQuery, useCreateProductMutation  } = productsApi; */
+export const { useGetProductsQuery, useCreateProductMutation  } = productsApi;
