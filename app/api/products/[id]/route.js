@@ -49,11 +49,11 @@ export async function PUT(request, { params }) {
   try {
     const data = await request.formData();
     const image = data.get("image");
-    /*     const updateData = {
+    const updateData = {
       title: data.get("title"),
       category: data.get("category"),
       description: data.get("description"),
-    }; */
+    };
     const title = data.get("title");
     const category = data.get("category");
     const description = data.get("description");
@@ -68,15 +68,9 @@ export async function PUT(request, { params }) {
     }
 
     if (image) {
-      
-    
+      const buffer = await processImage(image);
 
-      //add imageUrl property to the updateData object
-      /* updateData.imageUrl = res; */
-
-      const imageUrl = await processImage(image);
-
-/*       const res = await new Promise((resolve, reject) => {
+      const res = await new Promise((resolve, reject) => {
         cloudinary.uploader
           .upload_stream(
             {
@@ -87,15 +81,14 @@ export async function PUT(request, { params }) {
                 console.log(err);
                 reject(err);
               }
-  
+
               resolve(result);
             }
           )
           .end(buffer);
-      }); */
-
-
-
+      });
+      /* add imageUrl property to the updateData object */
+      updateData.imageUrl = res.secure_url;
 
       /* console.log("updateData", updateData); */
       // new: true returns actualized data
@@ -107,7 +100,7 @@ export async function PUT(request, { params }) {
           title,
           category,
           description,
-          imageUrl 
+          imageUrl,
         }
       );
 
@@ -120,8 +113,7 @@ export async function PUT(request, { params }) {
 
         title,
         category,
-        description
-        
+        description,
       });
       return NextResponse.json({
         productUpdated,

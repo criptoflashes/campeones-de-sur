@@ -111,7 +111,7 @@ function AdminDashboard() {
           headers: {
             "Content-Type": "multipart/form-data"
           }
-        }).then(res => res.text())
+        })
 
         console.log("paso", res)
       }
