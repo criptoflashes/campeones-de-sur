@@ -22,7 +22,7 @@ function Announcement() {
                     <Image src={logo} width="200" height="auto" alt=""/>
                 </motion.div>
                 <p className="text-center text-sm font-medium">
-                    Pronto estaremos llegando como campeones a tu mesa!
+                Sabores argentinos de la fábrica a tu mesa 
                     <a href="#" className="inline-block underline"></a>
                 </p>
             </div>

@@ -4,6 +4,11 @@ import Image from 'next/image'
 function Hero() {
     return (
         <div>
+
+            <h1 className='text-center py-6 text-xl'>🥇Queremos deleitar tu paladar
+                🥈Te brindamos una experiencia única
+                🥉Lo hacemos con orgullo y pasión</h1>
+
             <div className="carousel carousel-end rounded-box h-60 mt-10">
 
                 <div className="carousel-item">

@@ -28,7 +28,7 @@ function AllProducts() {
 
                 ))
             )}
-            <p> 123</p>
+           
         </div>
 
 

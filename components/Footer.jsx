@@ -10,9 +10,9 @@ function Footer() {
 
 
   return (
-    <div /* className="relative" */>
-      <footer className="footer p-10 bg-blue-300 text-base-content">
-  <div>
+    <div className='flex relative' >
+      <footer className="footer p-10 bg-blue-300 text-base-content justify-center">
+ {/*  <div>
     <span className="footer-title">Services</span> 
     <a className="link link-hover">Branding</a> 
     <a className="link link-hover">Design</a> 
@@ -25,13 +25,13 @@ function Footer() {
     <a className="link link-hover">Contact</a> 
     <a className="link link-hover">Jobs</a> 
     <a className="link link-hover">Press kit</a>
-  </div> 
-  <div>
-    <span className="footer-title">Social</span> 
-    <div className="grid grid-flow-col gap-4">
+  </div>  */}
+  <div className='grid grid-col-5  '>
+    <span className="footer-title text-center">Seguinos en nuestras redes sociales</span> 
+    <div className="grid grid-flow-col gap-4  flex justify-center">
       <a href='https://www.instagram.com/campeones.delsur/'><svg
   xmlns="http://www.w3.org/2000/svg"
-  class="h-5 w-5"
+  class="h-9 w-9"
   fill="currentColor"
   viewBox="0 0 24 24">
   <path
@@ -39,7 +39,7 @@ function Footer() {
 </svg></a>
       <a href='https://wa.me/+5491158212717'><svg
   xmlns="http://www.w3.org/2000/svg"
-  class="h-5 w-5"
+  class="h-9 w-9"
   fill="currentColor"
   viewBox="0 0 24 24">
   <path
