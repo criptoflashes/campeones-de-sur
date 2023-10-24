@@ -1,6 +1,7 @@
 /* import Users from "@/components/Users"; */
 import Hero from "components/Hero.jsx"
 import MainContentHome from "components/MainContentHome";
+import BannerContactHome from "components/BannerContactHome";
 /* import Image from "next/image"; */
 
 //REact Server Component
@@ -15,22 +16,22 @@ import MainContentHome from "components/MainContentHome";
 //para ver los datos en el front
 
 async function IndexPage() {
- /*  const users = await fetchUsers(); */
+  /*  const users = await fetchUsers(); */
 
   return (
     <div className="flex flex-col place-content-center px-10 ">
       <Hero />
       <div className="flex flex-col w-3/4 pt-5 mx-auto ">
-      <h2 className=" text-2xl text-slate-600 text-center	">
-        “En nuestra empresa nos dedicamos a ofrecer alimentos de alta calidad
-        que deleiten el paladar de nuestros clientes. Nos esforzamos por brindar
-        una experiencia única en cada momento compartido con nuestros productos.
-        Nos enorgullece ser una empresa argentina y trabajamos para reflejar la
-        excelencia de nuestra cultura en todo lo que hacemos.”
-      </h2>
+        <h2 className=" text-2xl text-slate-600 text-center	">
+          “En nuestra empresa nos dedicamos a ofrecer alimentos de alta calidad
+          que deleiten el paladar de nuestros clientes. Nos esforzamos por brindar
+          una experiencia única en cada momento compartido con nuestros productos.
+          Nos enorgullece ser una empresa argentina y trabajamos para reflejar la
+          excelencia de nuestra cultura en todo lo que hacemos.”
+        </h2>
       </div>
+      <BannerContactHome />
       <MainContentHome />
-
 
       {/* <Users users={users} /> */}
     </div>

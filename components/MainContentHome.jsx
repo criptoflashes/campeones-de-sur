@@ -2,9 +2,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useSpring } from "framer-motion"
 
-/* COUNTER */
-/* import { decrement, increment, reset } from "@/redux/features/counterSlice";
-import { useDispatch, useSelector } from "react-redux"; */
+
 
 /* API products state */
 /* import { useGetProductsQuery } from '@/redux/services/productApi' */
@@ -38,10 +36,6 @@ function MainContentHome() {
 
 
 
-    /* COUNTER */
-    /*   const count = useSelector((state) => state.counterReducer.value);
-      const dispatch = useDispatch();
-   */
     return (
         <div className="py-20 "> <div className="divider"></div>
 
@@ -60,16 +54,7 @@ function MainContentHome() {
 
             </div>
 
-            {/* COUNTER */}
-            {/*             <h4 style={{ marginBottom: 16 }}>{count}</h4>
-            <button onClick={() => dispatch(increment())}>increment</button>
-            <button
-                onClick={() => dispatch(decrement())}
-                style={{ marginInline: 16 }}
-            >
-                decrement
-            </button>
-            <button onClick={() => dispatch(reset())}>reset</button> */}
+
 
 
 
