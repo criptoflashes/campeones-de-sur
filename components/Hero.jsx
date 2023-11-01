@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 function Hero() {
     return (
-        <div>
+        <div className='my-10'> 
 
             <h1 className='text-center py-6 text-xl'>🥇Queremos deleitar tu paladar
                 🥈Te brindamos una experiencia única
