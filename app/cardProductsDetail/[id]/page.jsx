@@ -6,7 +6,7 @@ import { useParams } from "next/navigation"
 import { useEffect, useState } from "react"
 
 
-function page() {
+function ShowOneProduct() {
 
   const params = useParams()
 
@@ -44,5 +44,5 @@ function page() {
   )
 }
 
-export default page
+export default ShowOneProduct
 
