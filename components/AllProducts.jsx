@@ -6,6 +6,7 @@ import { useGetProductsQuery } from '@/redux/services/productApi'
 
 
 
+
 function AllProducts() {
 
     /* API products state */
@@ -23,10 +24,10 @@ function AllProducts() {
             ) : isLoading || isFetching ? (
                 <Loading />
             ) : (
-                data?.map((product) => (
+                data?.map((product) =>  (
                     <CardProducts product={product} key={product.title} />
 
-                ))
+))
             )}
 
         </div>

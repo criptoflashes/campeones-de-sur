@@ -3,10 +3,7 @@ import Link from 'next/link';
 
 function CardProducts({ product }) {
   return (
-    /*     <Link
-          className="bg-gray-400 text-white rounded-md hover:cursor-pointer hover:bg-gray-700 my-1"
-          href={`/adminProducts/${product._id}`}
-        > */
+
     <div
       className="bg-gray-400 text-white rounded-md hover:cursor-pointer hover:bg-gray-700 my-1">
 
@@ -23,11 +20,12 @@ function CardProducts({ product }) {
             alt=""
           />
         )}
-        <div className="p-4">
-          {/* <h1 className="text-lg font-bold">{product.title}</h1> */}
-          {/* <h2 className="text-2xl">{product.category}</h2> */}
-          <h2 className="text-lg text-slate-100">{product.description}</h2>
-        </div>
+
+      </div>
+
+
+      <div>
+        <Link href={`/cardProductsDetail/${product._id}`}><h2>+ info</h2> </Link>
       </div>
 
     </div>
