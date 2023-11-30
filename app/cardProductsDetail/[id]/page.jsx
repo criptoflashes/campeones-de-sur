@@ -38,7 +38,7 @@ function ShowOneProduct() {
   }, [])
 
   return (
-    <div>
+    <div className="flex justify-center my-4 px-1">
       <CardProductsDetail oneProduct={oneProduct} />
     </div>
   )

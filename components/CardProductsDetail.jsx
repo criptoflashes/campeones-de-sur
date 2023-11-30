@@ -2,30 +2,32 @@
 
 
 function CardProductsDetail({ oneProduct
- }) {
-    
+}) {
+
   return (
 
     <div
-      className="bg-gray-400 text-white rounded-md bg-gray-700 my-1">
+      className="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 lg:w-9/12  sm:w-full ">
+
+      {oneProduct.imageUrl && (
+        <img
+          src={oneProduct.imageUrl}
+          className=" mx-auto rounded-t-lg "
+          alt=""
+        />
+      )}
 
       <div
-        class="border-b-4 border-neutral-100 px-6 py-3 my-6 dark:border-neutral-300 dark:text-neutral-50">
-        <h1 className="text-lg font-bold ">{oneProduct.title}</h1>
+        class="p-6 text-center">
+        <h1 className="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50 ">{oneProduct.title}</h1>
       </div>
 
-      <div className="relative ">
-        {oneProduct.imageUrl && (
-          <img
-            src={oneProduct.imageUrl}
-            className="w-full h-48 object-cover "
-            alt=""
-          />
-        )}
-        <div className="p-4">
-          <h2 className="text-lg text-slate-100">{oneProduct.description}</h2>
-        </div>
+
+
+      <div className="p-4">
+        <h2 className="text-lg text-slate-100">{oneProduct.description}</h2>
       </div>
+
 
 
 
