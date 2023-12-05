@@ -2,6 +2,8 @@
 import Hero from "components/Hero.jsx"
 import MainContentHome from "components/MainContentHome";
 import BannerContactHome from "components/BannerContactHome";
+import PresentationHomeText from "@/components/PresentationHomeText";
+
 /* import Image from "next/image"; */
 
 //REact Server Component
@@ -19,21 +21,13 @@ async function IndexPage() {
   /*  const users = await fetchUsers(); */
 
   return (
-    <div className="flex flex-col place-content-center  px-10 h-full ">
+    <div className="flex flex-col place-content-center  px-2 h-full ">
       <Hero />
-      <div className="flex flex-col w-3/4 pt-5 mx-auto  ">
-        <h2 className=" text-2xl text-slate-600 text-center	">
-          “En nuestra empresa nos dedicamos a ofrecer alimentos de alta calidad
-          que deleiten el paladar de nuestros clientes. Nos esforzamos por brindar
-          una experiencia única en cada momento compartido con nuestros productos.
-          Nos enorgullece ser una empresa argentina y trabajamos para reflejar la
-          excelencia de nuestra cultura en todo lo que hacemos.”
-        </h2>
-      </div>
+      <PresentationHomeText />
 
 
       <div
-        class=" flex flex-col place-content-center self-center embed-responsive embed-responsive-16by9 relative  overflow-hidden  h-full bg-red-300 mt-10 "
+        class=" flex flex-col place-content-center self-center embed-responsive embed-responsive-16by9 relative  overflow-hidden  h-full bg-red-300 mt-5"
         style={{ padding: "25.25%" }}>
         {/*  <iframe
             class="embed-responsive-item absolute bottom-0 left-0 right-0 top-0 h-full w-full" */}

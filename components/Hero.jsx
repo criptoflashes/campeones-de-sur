@@ -1,13 +1,24 @@
 
+"use client"
 import Image from 'next/image'
+import { motion } from "framer-motion"
 
 function Hero() {
     return (
-        <div className='my-10'> 
-
-            <h1 className='text-center py-6 text-xl'>🥇Queremos deleitar tu paladar
+        <div className='my-10 '>
+            <motion.div
+                className="box"
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                    duration: 3,
+                    delay: 0,
+                    ease: [0, 0.30, 0.9, 1.90]
+                }}
+            > <h1 className='text-center py-6 text-xl'>🥇Queremos deleitar tu paladar
                 🥈Te brindamos una experiencia única
                 🥉Lo hacemos con orgullo y pasión</h1>
+            </motion.div>
 
             <div className="carousel carousel-end rounded-box h-60 mt-10">
 

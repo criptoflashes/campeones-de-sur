@@ -38,23 +38,31 @@ function MainContentHome() {
 
     return (
         <div className="py-20 "> <div className="divider"></div>
-
+{/* 
             <div ref={productsDiv} className="grid grid-cols-1 gap-4 lg:grid-cols-4 lg:gap-8" >
 
 
-                <motion.div style={{ opacity: smoothOpacity, scale: smoothOpacity }}/* style={{ scaleX: scrollYProgress }} */  /* animate={{ opacity:scrollYProgress, scale: 1 }} */ /* transition={{ ease: "easeInOut", duration: 0.8 }}  */ className="h-32 rounded-lg bg-gray-400"></motion.div>
-                <motion.div  /* initial={{ opacity: 0.5, scale: 0.9 }} */ style={{ opacity: smoothOpacity, scale: smoothOpacity }} className="h-32 rounded-lg bg-gray-400"></motion.div>
-                <motion.div style={{ opacity: smoothOpacity, scale: smoothOpacity }}/* initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ease: "easeInOut", duration: 3 }} */ className="h-32 rounded-lg bg-gray-400 lg:col-span-2"></motion.div>
+                <motion.div style={{ opacity: smoothOpacity, scale: smoothOpacity }}className="h-32 rounded-lg bg-gray-400"></motion.div>
+                <motion.div   style={{ opacity: smoothOpacity, scale: smoothOpacity }} className="h-32 rounded-lg bg-gray-400"></motion.div>
+                <motion.div style={{ opacity: smoothOpacity, scale: smoothOpacity }} className="h-32 rounded-lg bg-gray-400 lg:col-span-2">       <div className="flex flex-col w-3/4 pt-5 mx-auto  ">
+        <h2 className=" text-2xl text-slate-600 text-center	">
+          “En nuestra empresa nos dedicamos a ofrecer alimentos de alta calidad
+          que deleiten el paladar de nuestros clientes. Nos esforzamos por brindar
+          una experiencia única en cada momento compartido con nuestros productos.
+          Nos enorgullece ser una empresa argentina y trabajamos para reflejar la
+          excelencia de nuestra cultura en todo lo que hacemos.”
+        </h2>
+      </div></motion.div>
 
 
-                <motion.div style={{ opacity: smoothOpacity, scale: smoothOpacity }} /* initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ease: "easeInOut", duration: 4 }} */ className="h-32 rounded-lg bg-gray-400 lg:col-span-2"></motion.div>
-                <motion.div style={{ opacity: smoothOpacity, scale: smoothOpacity }} /* initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ease: "easeInOut", duration: 5 }} */ className="h-32 rounded-lg bg-gray-400"></motion.div>
+                <motion.div style={{ opacity: smoothOpacity, scale: smoothOpacity }} className="h-32 rounded-lg bg-gray-400 lg:col-span-2"></motion.div>
+                <motion.div style={{ opacity: smoothOpacity, scale: smoothOpacity }}  className="h-32 rounded-lg bg-gray-400"></motion.div>
                 <motion.div style={{ opacity: smoothOpacity, scale: smoothOpacity }} className="h-32 rounded-lg bg-gray-400"></motion.div>
 
 
             </div>
 
-
+ */}
 
 
 
