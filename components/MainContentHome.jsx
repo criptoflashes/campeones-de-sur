@@ -1,8 +1,8 @@
 "use client"
-import { useRef } from "react";
+/* import { useRef } from "react";
 import { motion, useScroll, useSpring } from "framer-motion"
 
-
+ */
 
 /* API products state */
 /* import { useGetProductsQuery } from '@/redux/services/productApi' */
@@ -12,7 +12,7 @@ function MainContentHome() {
 
 
 
-    const productsDiv = useRef(null)
+   /*  const productsDiv = useRef(null)
     const { scrollYProgress } = useScroll({
         target: productsDiv,
         offset: ["start end", "end end"]
@@ -22,7 +22,7 @@ function MainContentHome() {
 
 
     const smoothOpacity = useSpring(scrollYProgress, { stiffness: 100, damping: 50, mass: 0.5 })
-
+ */
     /* API products state */
 /*     const { isLoading, isFetching, data, error } = useGetProductsQuery(null);
 

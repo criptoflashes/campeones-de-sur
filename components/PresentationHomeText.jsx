@@ -7,7 +7,7 @@ import { motion, useScroll, useSpring } from "framer-motion"
 
 
 
-async function PresentationHomeText() {
+ function PresentationHomeText() {
 
 
     const productsDiv = useRef(null)
