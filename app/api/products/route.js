@@ -49,6 +49,8 @@ export async function POST(request) {
 
       return buffer;
     }
+
+    
     const buffer = await processImage(image);
     const response = await uploadImageToCloudinary(buffer);
 

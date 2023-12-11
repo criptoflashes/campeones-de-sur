@@ -68,27 +68,20 @@ export async function PUT(request, { params }) {
     }
 
     if (image) {
+      async function processImage(image) {
+        const bytes = await image.arrayBuffer();
+        const buffer = Buffer.from(bytes);
+  
+        return buffer;
+      }
+
+
       const buffer = await processImage(image);
+      const response = await uploadImageToCloudinary(buffer);
 
-      const res = await new Promise((resolve, reject) => {
-        cloudinary.uploader
-          .upload_stream(
-            {
-              resource_type: "image",
-            },
-            async (err, result) => {
-              if (err) {
-                console.log(err);
-                reject(err);
-              }
 
-              resolve(result);
-            }
-          )
-          .end(buffer);
-      });
       /* add imageUrl property to the updateData object */
-      updateData.imageUrl = res.secure_url;
+      updateData.imageUrl = response.secure_url;
 
       /* console.log("updateData", updateData); */
       // new: true returns actualized data
@@ -100,7 +93,7 @@ export async function PUT(request, { params }) {
           title,
           category,
           description,
-          imageUrl,
+          imageUrl: response.secure_url,
         }
       );
 
@@ -123,5 +116,27 @@ export async function PUT(request, { params }) {
     return NextResponse.json(error.message, {
       status: 400,
     });
+  }
+}
+
+
+
+async function uploadImageToCloudinary(buffer) {
+  try {
+    return new Promise((resolve, reject) => {
+      cloudinary.uploader
+        .upload_stream({ resource_type: "image" }, async (err, result) => {
+          if (err) {
+            reject({ statusCode: 500, error: err.message });
+          } else {
+            resolve(result);
+          }
+        })
+        .end(buffer);
+    });
+  } catch (error) {
+    console.error("Error al subir la imagen a Cloudinary:", error);
+    /* return { errMsg: `this error ${error.message} ` } */
+    throw error;
   }
 }
