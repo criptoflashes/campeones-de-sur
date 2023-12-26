@@ -135,7 +135,7 @@ async function uploadImageToCloudinary(buffer) {
         .end(buffer);
     });
   } catch (error) {
-    console.error("Error al subir la imagen a Cloudinary:", error);
+    console.log("Error al subir la imagen a Cloudinary:", error);
     /* return { errMsg: `this error ${error.message} ` } */
     throw error;
   }

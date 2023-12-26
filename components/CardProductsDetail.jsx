@@ -1,5 +1,5 @@
 
-
+import Image from 'next/image'
 
 function CardProductsDetail({ oneProduct
 }) {
@@ -7,13 +7,22 @@ function CardProductsDetail({ oneProduct
   return (
 
     <div
-      className="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 lg:w-9/12  sm:w-full ">
+      className="block rounded-lg  dark:bg-neutral-400 lg:w-5/12  sm:w-full relative">
 
       {oneProduct.imageUrl && (
-        <img
+        <Image
           src={oneProduct.imageUrl}
-          className=" mx-auto rounded-t-lg "
-          alt=""
+          className=" mx-auto rounded-t-lg w-1/2 h-1/8 "
+          alt=""   
+          width="0"
+          height="0"
+          sizes="100vW"
+         
+          style={{
+            objectFit: 'cover',
+          }}
+       
+
         />
       )}
 
