@@ -26,7 +26,7 @@ import { motion, useScroll, useSpring } from "framer-motion"
             <motion.div style={{ opacity: smoothOpacity, scale: smoothOpacity }}/* initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ease: "easeInOut", duration: 3 }} */ className=" ">
 
 
-                <h2 className=" text-2xl text-slate-600 text-center	">
+                <h2 className=" text-2xl text-slate-600 text-center	 ">
                     “En nuestra empresa nos dedicamos a ofrecer alimentos de alta calidad
                     que deleiten el paladar de nuestros clientes. Nos esforzamos por brindar
                     una experiencia única en cada momento compartido con nuestros productos.

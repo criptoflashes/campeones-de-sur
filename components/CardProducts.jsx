@@ -1,13 +1,24 @@
+"use client"
 import Link from 'next/link';
 import Image from 'next/image'
+import {useState} from "react"
 
 function CardProducts({ product }) {
+
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleHover = () => {
+    setIsHovered(!isHovered);
+  };
+
+
+
   return (
 
     <div
 
 
-      className="bg-gray-500 text-white rounded-md hover:cursor-pointer hover:bg-gray-700 my-1  shadow-xl shadow-sky-400/60 card glass h-50">
+      className="bg-gray-500 text-white rounded-md hover:cursor-pointer hover:bg-gray-700 my-1  shadow-xl shadow-sky-400/60 card glass h-50 ">
       <Link href={`/cardProductsDetail/${product._id}`}>
 
 
@@ -32,10 +43,18 @@ function CardProducts({ product }) {
         </figure>
 
         <div
-          className=" border-b-4 border-neutral-100 px-6  my-1 dark:border-neutral-300 dark:text-neutral-50">
+          className="border-b-4 border-neutral-100 px-6  my-1 dark:border-neutral-300 dark:text-neutral-50" >
         </div>
-        <div className=" px-6  my-2 dark:border-neutral-300 dark:text-neutral-50">
-          <h2>+ info</h2>
+
+
+        <div className={`border-b-4 border-neutral-100 px-6  my-1 dark:border-neutral-300 dark:text-neutral-50 ${isHovered ? 'text-red-500 font-bold' : ''
+            } `}
+          onMouseEnter={handleHover}
+          onMouseLeave={handleHover}>
+
+
+
+          <h2 className='truncate ...  '> {isHovered ? 'Más info' : product.description}</h2>
         </div>
       </Link>
     </div>
