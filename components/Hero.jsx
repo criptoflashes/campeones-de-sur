@@ -7,17 +7,49 @@ function Hero() {
     return (
         <div className='my-10 '>
             <motion.div
-                className="box"
+                className="box flex  justify-center "
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{
-                    duration: 3,
+                    duration: 1,
                     delay: 0,
+                    ease: [0, 0.10, 0.9, 1.90]
+                }}
+            > <ul className='text-left py-3 text-xl '>
+                    <li>🥇Queremos deleitar tu paladar</li>
+                </ul>
+            </motion.div>
+
+
+
+            <motion.div
+                className="box flex  justify-center "
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                    duration: 1,
+                    delay: 0.5,
+                    ease: [0, 0.20, 0.9, 1.90]
+                }}
+            >
+                <ul className='text-left py-3 text-xl '>
+                    <li>🥈Te brindamos una experiencia única</li>
+                </ul>
+            </motion.div>
+
+            <motion.div
+                className="box flex  justify-center "
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                    duration: 1,
+                    delay: 1,
                     ease: [0, 0.30, 0.9, 1.90]
                 }}
-            > <h1 className='text-center py-6 text-xl'>🥇Queremos deleitar tu paladar
-                🥈Te brindamos una experiencia única
-                🥉Lo hacemos con orgullo y pasión</h1>
+            >
+                <ul className='text-left py-3 text-xl '>
+                    <li>🥉Lo hacemos con orgullo y pasión</li>
+                </ul>
             </motion.div>
 
             <div className="carousel carousel-end rounded-box h-60 mt-10">
