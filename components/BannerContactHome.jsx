@@ -2,9 +2,9 @@ import React from 'react'
 
 function BannerContactHome() {
     return (
-        <div>
-            <div className="divider  "></div>
-            <div className="pt-8 flex justify-center ">
+        <div className=''>
+            <div className="divider bg-yellow-100 "></div>
+            <div className=" flex justify-center ">
 
 
 
@@ -34,4 +34,3 @@ function BannerContactHome() {
 }
 
 export default BannerContactHome
-/*  style={{background: "#128c7e"}} */

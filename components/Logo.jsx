@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import Image from 'next/image'
 import logo from '../public/campeonsDelSur.png'
-function Announcement() {
+function Logo() {
     return (
         <div /* className='relative' */>
             <div className="bg-primary px-4 py-3 text-white">
@@ -30,4 +30,4 @@ function Announcement() {
     )
 }
 
-export default Announcement
+export default Logo

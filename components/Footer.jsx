@@ -10,13 +10,8 @@ function Footer() {
 
 
   return (
-    <div className='' >
+    <div className='  bg-blue-300 border-t-8 border-t-yellow-100' >
       <footer className="footer p-10 bg-blue-300  justify-center">
-
-
-
-
-
 
         <div className="  gap-3 inline-block  place-self-center">
           <span className="footer-title text-center">Seguinos en nuestras redes sociales</span>

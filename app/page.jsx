@@ -1,8 +1,8 @@
 /* import Users from "@/components/Users"; */
 import Hero from "components/Hero.jsx"
-import MainContentHome from "components/MainContentHome";
 import BannerContactHome from "components/BannerContactHome";
 import PresentationHomeText from "@/components/PresentationHomeText";
+import HomeVideo from "@/components/HomeVideo";
 
 /* import Image from "next/image"; */
 
@@ -21,35 +21,15 @@ async function IndexPage() {
   /*  const users = await fetchUsers(); */
 
   return (
-    <div className="flex flex-col place-content-center  px-2 h-full ">
+    <div className="flex flex-col place-content-center  px-2 h-full bg-blue-100">
       <Hero />
       <PresentationHomeText />
 
 
-      <div
-        class=" flex flex-col place-content-center self-center embed-responsive embed-responsive-16by9 relative  overflow-hidden  h-full bg-red-300 mt-5"
-        style={{ padding: "25.25%" }}>
-        {/*  <iframe
-            class="embed-responsive-item absolute bottom-0 left-0 right-0 top-0 h-full w-full" */}
-        <iframe class="embed-responsive-item absolute  h-full w-full self-center" src="https://www.youtube.com/embed/o_75XMoovRU" title="Salames Campeones del Festival Nacional del Salame en Oncativo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-gtm-yt-inspected-2340190_699="true"
-          id="240632615"></iframe>
-        {/*  allowfullscreen=""
-            data-gtm-yt-inspected-2340190_699="true"
-            id="240632615"></iframe> */}
-      </div>
 
-
-
-
-
-
-
-
-
-
-
+      <HomeVideo />
       <BannerContactHome />
-      <MainContentHome />
+
 
       {/* <Users users={users} /> */}
     </div>

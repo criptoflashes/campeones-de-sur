@@ -22,7 +22,7 @@ import { motion, useScroll, useSpring } from "framer-motion"
     return (
         <div ref={productsDiv} className="flex flex-col  h-full  ">
 
-            <div className="divider"></div>
+            <div className="divider bg-yellow-100"></div>
             <motion.div style={{ opacity: smoothOpacity, scale: smoothOpacity }}/* initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ease: "easeInOut", duration: 3 }} */ className=" ">
 
 
@@ -35,7 +35,7 @@ import { motion, useScroll, useSpring } from "framer-motion"
                 </h2>
             </motion.div>
 
-            <div className="divider"></div>
+            <div className="divider bg-yellow-100"></div>
         </div>
     );
 }

@@ -5,11 +5,17 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-/*     theme: {
+   theme: {
     extend: {
-      backgroundImage: {'bgImage': "url('/img/bg.svg')"},
+      fontFamily:{
+       RobotoMono:['Roboto Mono', 'monospace'],
+        IstokWeb: ['Istok Web', 'sans-serif'],
+        SourceCodePro: ['Source Code Pro', 'monospace'], 
+        Ryee: ['Rye', 'serif'],
+        Cambay: ['Cambay', 'sans-serif']
+      },
     }
-  }, */
+  }, 
   daisyui: {
     themes: [
       {
@@ -32,4 +38,5 @@ module.exports = {
     ]
   },
   plugins: [require("daisyui")],
+
 };

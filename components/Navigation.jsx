@@ -9,10 +9,21 @@ import { motion } from "framer-motion"
 function Navigation() {
     
     return (
-        <div /* className='relative' */>
 
-            <div className="navbar  bg-blue-300">
-                <div className="navbar-start  ">
+        <div>
+      
+
+            <div className="navbar grid grid-cols-2 bg-blue-300 border-b-8 border-b-yellow-100 pl-4">
+            <motion.div whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 17 }}>
+                    <Link href="/">
+                        <Image src={cheeseHome} alt="campeones del sur" width="100" height="100" className='ml-4 ' />
+                    </Link>
+                </motion.div>
+
+                <div>
+                <div className="navbar-end  ">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -38,13 +49,7 @@ function Navigation() {
                             </li>
                         </ul>
                     </div>
-                    <motion.div whileHover={{ scale: 1.2 }}
-                        whileTap={{ scale: 0.9 }}
-                        transition={{ type: "spring", stiffness: 400, damping: 17 }}>
-                    <Link href="/">
-                        <Image src={cheeseHome} alt="campeones del sur" width="100" height="100" className='ml-20' />
-                    </Link>
-                </motion.div>
+                  
             </div>
 
 
@@ -72,7 +77,7 @@ function Navigation() {
                     </li>
                 </ul>
             </div>
-
+            </div>
         </div>
             
         </div >

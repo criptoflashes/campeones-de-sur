@@ -1,7 +1,7 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
 import { Providers } from '@/redux/providers'
-import Announcement from '/components/Announcement';
+import Logo from '/components/Logo';
 import Navigation from '/components/Navigation'
 import Footer from "/components/Footer";
 
@@ -20,11 +20,8 @@ export default function RootLayout({ children }) {
 
       <body className={`${inter.className}`} >
         <Providers>
-          <Announcement />
+          <Logo/>
           <Navigation />
-
-
-
           {children}
 
           <Footer />
