@@ -7,7 +7,7 @@ function CardProductsDetail({ oneProduct
   return (
 
     <div
-      className="block rounded-lg  dark:bg-neutral-400 lg:w-5/12  sm:w-full relative">
+      className="block rounded-lg  dark:bg-neutral-400 lg:w-5/12  sm:w-full relative  shadow-xl shadow-sky-400/60">
 
       {oneProduct.imageUrl && (
         <Image

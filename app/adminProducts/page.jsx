@@ -20,7 +20,7 @@ export default async function DashboardCardContainer() {
 
 
   const showProducts = await loadProducts()
- 
+
 
   return (
     <div className="grid grid-cols-4 grid-rows-auto gap-4">
@@ -30,8 +30,13 @@ export default async function DashboardCardContainer() {
 
       ))
 
-      }   
+      }
+
+
+
     </div>
+
+
   )
 }
 
