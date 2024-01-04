@@ -28,7 +28,7 @@ function CardProductsDetail({ oneProduct
 
       <div
         class="p-2 text-center">
-        <h1 className=" text-xl font-SourceCodePro leading-tight text-neutral-800 dark:text-neutral-50 pt-2">{oneProduct.title}dd</h1>
+        <h1 className=" text-xl font-SourceCodePro leading-tight text-neutral-800 dark:text-neutral-50 pt-2">{oneProduct.title}</h1>
       </div>
 
 

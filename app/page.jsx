@@ -21,14 +21,14 @@ async function IndexPage() {
   /*  const users = await fetchUsers(); */
 
   return (
-    <div className="flex flex-col place-content-center  px-2 h-full bg-blue-100">
+    <div className="flex flex-col place-content-center  px-2 h-full bg-white-100">
       <Hero />
       <PresentationHomeText />
 
 
 
-      <HomeVideo />
-      <BannerContactHome />
+      <HomeVideo className="bg-red-100"/>
+      <BannerContactHome  />
 
 
       {/* <Users users={users} /> */}
