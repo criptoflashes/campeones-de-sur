@@ -3,7 +3,7 @@ import Hero from "components/Hero.jsx"
 import BannerContactHome from "components/BannerContactHome";
 import PresentationHomeText from "@/components/PresentationHomeText";
 import HomeVideo from "@/components/HomeVideo";
-
+import WhatsButton from "@/components/WhatsButton";
 /* import Image from "next/image"; */
 
 //REact Server Component
@@ -22,7 +22,9 @@ async function IndexPage() {
 
   return (
     <div className="flex flex-col place-content-center  px-2 h-full bg-white-100">
+      
       <Hero />
+      
       <PresentationHomeText />
 
 

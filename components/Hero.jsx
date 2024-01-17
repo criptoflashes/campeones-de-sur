@@ -7,7 +7,11 @@ function Hero() {
     return (
         <div className='my-10 '>
 
-<h1 className=' text-center font-Cambay text-6xl '>Campeones Del Sur</h1>
+{/* <h1 className=' text-center font-Cambay text-6xl '>Campeones Del Sur</h1> */}
+
+
+
+
 
             <motion.div
                 className="box flex  justify-center "

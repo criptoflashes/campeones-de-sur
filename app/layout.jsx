@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import { Providers } from '@/redux/providers'
 import Logo from '/components/Logo';
 import Navigation from '/components/Navigation'
+import WhatsButton from '@/components/WhatsButton';
 import Footer from "/components/Footer";
 
 
@@ -20,10 +21,19 @@ export default function RootLayout({ children }) {
 
       <body className={`${inter.className}`} >
         <Providers>
-          <Logo/>
-          <Navigation />
-          {children}
 
+        {/* <div class="... sticky top-0">
+                <p>sticky top</p>
+            </div> */}
+          
+          <Logo/>
+          <div class="... sticky top-0 z-10">
+          <Navigation />
+          
+          </div>
+          {children}
+          
+          <div class="... sticky bottom-60 z-10 flex justify-end"><WhatsButton/></div>
           <Footer />
         </Providers>
         {/* </div> */}
