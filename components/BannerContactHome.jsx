@@ -1,5 +1,4 @@
 "use client"
-import { motion } from "framer-motion"
 import WhatsArrows from "./WhatsArrows"
 
 
@@ -11,7 +10,7 @@ function BannerContactHome() {
 
 
 
-                <div className="pt-8  ">
+                <div className="pt-50  ">
                     <h1 className=" text-4xl text-slate-600 text-center	">Contactanos por Whatsapp para hacer tu pedido y saber más!</h1>
                     <div className='flex justify-center  '>
                        <WhatsArrows/>

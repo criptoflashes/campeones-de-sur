@@ -23,12 +23,8 @@ async function IndexPage() {
   return (
     <div className="flex flex-col place-content-center  px-2 h-full bg-white-100">
       
-      <Hero />
-      
+      <Hero />      
       <PresentationHomeText />
-
-
-
       <HomeVideo className="bg-red-100"/>
       <BannerContactHome  />
 

@@ -48,11 +48,11 @@ function ShowOneProduct() {
       <div className=" flex  place-content-center  bg-yellow-100">
         <ul>
 
-          <li className="text-center pt-5 ">
+          <li className="text-center pt-8 ">
             <h2 className="text-2xl text-slate-600 text-wrap text-balance ">Para pedir y ver más productos, comunicate con nosotros!</h2>
           </li>
 
-          <li className="flex justify-center pb-4">
+          <li className="flex justify-center">
             <WhatsArrows />
 
           </li>
