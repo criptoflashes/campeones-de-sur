@@ -4,6 +4,9 @@ import Image from 'next/image'
 function CardProductsDetail({ oneProduct
 }) {
 
+
+  window.scrollTo({ top: 0, left: 0}) 
+
   return (
 
     <div

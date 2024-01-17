@@ -53,7 +53,7 @@ function ShowOneProduct() {
           </li>
 
           <li className="flex justify-center pb-4">
-         <WhatsArrows/>
+            <WhatsArrows />
 
           </li>
         </ul>

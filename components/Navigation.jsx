@@ -43,20 +43,13 @@ function Navigation() {
                                     <li>
                                         <Link href="/">Home</Link>
                                     </li>
-                                </ul>
 
-                                <li>
-                                    <Link href="/productos">services</Link>
-                                    <ul className="p-2">
-                                        {/*                                     <li><Link href="/productos/quesos">Quesos</Link></li>
-                                    <li><Link href="/productos/chorizos">Chorizos</Link></li>
-                                    <li><Link href="/productos/yerba">Yerba</Link></li> */}
                                         <li><Link href="/productos/todoslosproductos">Todos los productos</Link></li>
-                                    </ul>
-                                </li>
-                                <li>
+                                   
+                                        </ul>
+{/*                                 <li>
                                     <Link href="/quienessomos">Quienes somos</Link>
-                                </li>
+                                </li> */}
                             </ul>
                         </div>
 
