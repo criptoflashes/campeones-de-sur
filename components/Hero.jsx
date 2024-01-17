@@ -9,10 +9,6 @@ function Hero() {
 
 {/* <h1 className=' text-center font-Cambay text-6xl '>Campeones Del Sur</h1> */}
 
-
-
-
-
             <motion.div
                 className="box flex  justify-center "
                 initial={{ opacity: 0, scale: 0.5 }}

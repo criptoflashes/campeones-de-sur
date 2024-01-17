@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google'
 import { Providers } from '@/redux/providers'
 import Logo from '/components/Logo';
 import Navigation from '/components/Navigation'
-import WhatsButton from '@/components/WhatsButton';
+import WhatsButton from '/components/WhatsButton';
 import Footer from "/components/Footer";
 
 
