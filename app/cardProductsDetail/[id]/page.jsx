@@ -4,7 +4,7 @@ import CardProductsDetail from "@/components/CardProductsDetail"
 import { useParams } from "next/navigation"
 
 import { useEffect, useState } from "react"
-import WhatsArrows from "@/components/whatsArrows"
+import WhatsArrows from "@/components/WhatsArrows"
 
 
 function ShowOneProduct() {

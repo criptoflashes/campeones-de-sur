@@ -1,6 +1,6 @@
 "use client"
 import { motion } from "framer-motion"
-import WhatsArrows from "./whatsArrows"
+import WhatsArrows from "./WhatsArrows"
 
 
 function BannerContactHome() {
