@@ -11,11 +11,11 @@ function Navigation() {
     return (
 
         <div>
-            <div className="navbar grid grid-cols-3 bg-blue-300 border-b-8 border-b-yellow-100 pl-4 ">
+            <div className="navbar grid lg:grid-cols-3 md:grid-cols-1 bg-blue-300 border-b-8 border-b-yellow-100 pl-4 ">
 
                 <motion.div whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 17 }}>
+                    transition={{ type: "spring", stiffness: 400, damping: 17 }} className= "flex justify-center">
                     <Link href="/">
                         <Image src={cheeseHome} alt="campeones del sur" width="100" height="100" className='ml-4 ' />
                     </Link>
@@ -23,8 +23,8 @@ function Navigation() {
 
 
 
-                <div className='justify-center'>
-                    <h1 className=' text-center font-Cambay text-4xl '>Campeones Del Sur</h1>
+                <div className='justify-center invisible lg:visible'>
+                    <h1 className=' text-center font-Cambay text-4xl  '>Campeones Del Sur</h1>
                 </div>
 
                 <div>
