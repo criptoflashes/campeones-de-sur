@@ -10,10 +10,10 @@ function Footer() {
 
 
   return (
-   
-      <footer className="footer pt-10 bg-blue-300  justify-center">
+    <div className='  bg-blue-300 border-t-8 border-t-yellow-100' >
+      <footer className="footer bg-blue-300  justify-center">
 
-        <div className="  gap-3 inline-block  place-self-center">
+        <div className=" pt-10 gap-3 inline-block  place-self-center">
           <span className="footer-title text-center">Seguinos en nuestras redes sociales</span>
           <div className='flex justify-center py-6 gap-3'>    
                 <a href='https://www.instagram.com/campeones.delsur/'><svg
@@ -40,7 +40,7 @@ function Footer() {
 
 
       </footer>
-   
+    </div>
   )
 }
 
