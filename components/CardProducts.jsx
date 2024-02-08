@@ -18,7 +18,7 @@ function CardProducts({ product }) {
     <div
 
 
-      className="bg-gray-500 text-white rounded-md hover:cursor-pointer hover:bg-gray-700 my-1  shadow-xl shadow-sky-400/60 card glass h-50 ">
+      className="bg-gray-500 text-white rounded-md  hover:cursor-pointer hover:bg-gray-700 my-6   shadow-xl shadow-sky-400/60 card glass h-50 ">
       <Link href={`/cardProductsDetail/${product._id}`}>
 
 

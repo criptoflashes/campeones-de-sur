@@ -3,16 +3,16 @@ import React from 'react'
 function WhatsButton() {
   return (
     <div>
-       <div className='flex  justify-center mb-20 lg:mr-10 '>
+       <div className='flex  justify-center mb-20  '>
                         <a href='https://wa.me/+5491158212717'
                             type="button"
                             data-te-ripple-init
                             data-te-ripple-color="light"
-                            class="  inline-block rounded-full m-5 p-3 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
+                            class="  inline-block rounded-full m-10 p-6 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
                             style={{ background: "#128c7e" }} >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                class="h-9 w-9"
+                                class="h-12 w-12"
                                 fill="currentColor"
                                 viewBox="0 0 24 24">
                                 <path

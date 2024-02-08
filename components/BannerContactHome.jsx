@@ -10,7 +10,7 @@ function BannerContactHome() {
 
 
 
-                <div className="pt-50  ">
+                <div className="pt-12  ">
                     <h1 className=" text-4xl text-slate-600 text-center	">Contactanos por Whatsapp para hacer tu pedido y saber más!</h1>
                     <div className='flex justify-center  '>
                        <WhatsArrows/>
