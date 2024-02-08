@@ -49,7 +49,7 @@ function Navigation() {
                     </div>
 
 
-                    <div className="navbar-center hidden lg:flex  ">
+                    <div className="navbar-center hidden lg:flex mr-8  ">
                         <ul className="menu menu-horizontal px-1 text-xl ">
                             <li>
                                 <Link href="/">Home</Link>
@@ -57,7 +57,7 @@ function Navigation() {
                             <li tabIndex={0}>
                                 <details>
                                     <summary>Productos</summary>
-                                    <ul className="p-2 z-10">
+                                    <ul className="p-2  z-10">
                                         {/*                                 <li><Link href="/productos/quesos">Quesos</Link></li>
                                 <li><Link href="/productos/chorizos">Chorizos</Link></li>
                                 <li><Link href="/productos/yerba">Yerba</Link></li> */}
@@ -65,9 +65,9 @@ function Navigation() {
                                     </ul>
                                 </details>
                             </li>
-                            <li>
+{/*                             <li>
                                 <Link href="/quienessomos">Quienes somos</Link>
-                            </li>
+                            </li> */}
                         </ul>
                     </div>
                 </div>

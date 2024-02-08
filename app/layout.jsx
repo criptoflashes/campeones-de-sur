@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
           </div>
           {children}
           
-          <div class=" sm:sticky bottom-40 md:sticky bottom-80 z-10 flex  lg:mr-10 sm:pr-0  justify-end"><WhatsButton/></div>
+          <div class=" flex  justify-center"><WhatsButton/></div>
           <Footer />
         </Providers>
         {/* </div> */}
