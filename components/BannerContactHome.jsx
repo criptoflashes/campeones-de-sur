@@ -1,6 +1,6 @@
 "use client"
 import WhatsArrows from "./WhatsArrows"
-
+import WhatsButton from "./WhatsButton"
 
 function BannerContactHome() {
     return (
@@ -15,6 +15,8 @@ function BannerContactHome() {
                     <div className='flex justify-center  '>
                        <WhatsArrows/>
                     </div>
+                    <div class=" flex  justify-center"><WhatsButton/></div>
+                    
                 </div>
             </div>
         </div>

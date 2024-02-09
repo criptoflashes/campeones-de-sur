@@ -5,7 +5,7 @@ import Logo from '/components/Logo';
 import Navigation from '/components/Navigation'
 import WhatsButton from '/components/WhatsButton';
 import Footer from "/components/Footer";
-
+import BannerContactHome from '@/components/BannerContactHome';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -32,8 +32,6 @@ export default function RootLayout({ children }) {
           
           </div>
           {children}
-          
-          <div class=" flex  justify-center"><WhatsButton/></div>
           <Footer />
         </Providers>
         {/* </div> */}

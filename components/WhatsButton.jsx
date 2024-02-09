@@ -3,7 +3,7 @@ import React from 'react'
 function WhatsButton() {
   return (
     <div>
-       <div className='flex  justify-center mb-20  '>
+       <div className='flex  justify-center mb-10  '>
                         <a href='https://wa.me/+5491158212717'
                             type="button"
                             data-te-ripple-init
