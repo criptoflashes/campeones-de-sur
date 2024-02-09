@@ -4,14 +4,14 @@ import WhatsButton from "./WhatsButton"
 
 function BannerContactHome() {
     return (
-        <div className=''>
-            <div className="divider bg-yellow-100 "></div>
+        <div className='mt-4 bg-yellow-100'>
+            <div className=""></div>
             <div className=" flex justify-center ">
 
 
 
-                <div className="pt-12  ">
-                    <h1 className=" text-4xl text-slate-600 text-center	">Contactanos por Whatsapp para hacer tu pedido y saber más!</h1>
+                <div className="pt-6  ">
+                    <h1 className=" text-3xl text-slate-600 text-center	">Contactanos por Whatsapp para hacer tu pedido y saber más!</h1>
                     <div className='flex justify-center  '>
                        <WhatsArrows/>
                     </div>

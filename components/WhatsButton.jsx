@@ -3,7 +3,7 @@ import React from 'react'
 function WhatsButton() {
   return (
     <div>
-       <div className='flex  justify-center mb-10  '>
+       <div className='flex  justify-center mb-1  '>
                         <a href='https://wa.me/+5491158212717'
                             type="button"
                             data-te-ripple-init
@@ -12,7 +12,7 @@ function WhatsButton() {
                             style={{ background: "#128c7e" }} >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                class="h-12 w-12"
+                                class="h-10 w-10"
                                 fill="currentColor"
                                 viewBox="0 0 24 24">
                                 <path

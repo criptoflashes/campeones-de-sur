@@ -50,7 +50,7 @@ function ShowOneProduct() {
         <ul>
 
           <li className="text-center pt-12 ">
-            <h2 className="text-3xl text-slate-600 text-wrap text-balance ">Para pedir y ver más productos, comunicate con nosotros!</h2>
+            <h2 className="text-2xl text-slate-600 text-wrap text-balance ">Para pedir y ver más productos, comunicate con nosotros!</h2>
           </li>
 
           <li className="flex justify-center">
